@@ -4,10 +4,10 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import com.pac.imonline.R;
 
-public class SwipePagesActivity extends AppCompatActivity{
+public class SwipePage2Activity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_swipepages);
+        setContentView(R.layout.activity_swipepage2);
     }
 }
