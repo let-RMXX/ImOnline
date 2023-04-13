@@ -80,7 +80,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
         android:fontFamily="monospace"
-        android:text="Swipe Right"
+        android:text="Swipe"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="24sp"
