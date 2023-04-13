@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_login"
-    tools:context=".activity.SwipePagesActivity">
+    tools:context=".activity.SwipePage1Activity">
 
     <TextView
         android:id="@+id/textView2"
@@ -85,5 +85,5 @@
         android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintTop_toBottomOf="@+id/textView5"
-        tools:layout_editor_absoluteX="126dp" />
+        tools:layout_editor_absoluteX="169dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
