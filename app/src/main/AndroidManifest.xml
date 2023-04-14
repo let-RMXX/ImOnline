@@ -19,7 +19,17 @@
             android:exported="false" />
         <activity
             android:name=".activity.LoginActivity"
-            android:exported="true">
+            android:exported="false"/>
+
+        <activity
+            android:name=".activity.ProfileActivity"
+            android:exported="true"/>
+
+            <activity
+                android:name=".activity.EditProfileActivity"
+                android:exported="true">
+
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
