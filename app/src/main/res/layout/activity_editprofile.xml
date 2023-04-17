@@ -42,13 +42,13 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
 
     <EditText
-        android:text="E-mail"
         android:id="@+id/editTextTextPersonName3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:text="Change e-mail"
         app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName2"
@@ -61,7 +61,7 @@
         android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="E-mail"
+        android:text="Change e-mail"
         app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName2"
@@ -74,7 +74,7 @@
         android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Skills Highlights"
+        android:text="Change Password"
         app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName3"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName3"
@@ -87,9 +87,18 @@
         android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Education"
+        android:text="Skills Highlights"
         app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName5"
         app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName5"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
