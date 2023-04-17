@@ -17,6 +17,7 @@
         android:fontFamily="monospace"
         android:text="Build your professional network"
         android:textAlignment="center"
+        android:textColor="@color/white"
         android:textSize="34sp"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="471dp" />
@@ -28,6 +29,7 @@
         android:layout_marginTop="20dp"
         android:text="You're with other professional who have the same interests as you"
         android:textAlignment="center"
+        android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintTop_toBottomOf="@+id/textView10"
         tools:layout_editor_absoluteX="0dp" />
@@ -38,6 +40,7 @@
         android:layout_height="wrap_content"
         android:text="Imagem"
         android:textAlignment="center"
+        android:textColor="@color/white"
         android:textSize="34sp"
         tools:layout_editor_absoluteX="143dp"
         tools:layout_editor_absoluteY="176dp" />
