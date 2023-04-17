@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_login"
+    tools:context=".activity.SwipePage3Activity"><![CDATA[
+    >
+
+    ]]>
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="monospace"
+        android:text="Build your professional network"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="471dp" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="You're with other professional who have the same interests as you"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Imagem"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        tools:layout_editor_absoluteX="143dp"
+        tools:layout_editor_absoluteY="176dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
