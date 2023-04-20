@@ -2,6 +2,8 @@
     <string name="app_name">ImOnline</string>
     <string name="login_password">Password</string>
     <string name="login_register">Don\'t have an account? Resgister!</string>
+    <string name="register_login">Already have an account? Login!</string>
     <string name="login_email">Email</string>
-    <string name="login_login">Login</string>
+    <string name="login_button">Login</string>
+    <string name="register_button">Register</string>
 </resources>

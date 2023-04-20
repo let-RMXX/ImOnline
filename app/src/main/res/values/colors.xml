@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="light_grey">#FEFCEC</color>
     <color name="dark_grey">#404348</color>
-
-    <color name="light_brown">#C89C76</color>
     <color name="lightbluegray">#A2B8BD</color>
     <color name="lightblue">#BAD8F6</color>
     <color name="darkestwhite">#CADADD</color>
-    <color name="login_text_color">#00BCD4</color>
+    <color name="blue">#00BCD4</color>
 
 </resources>
