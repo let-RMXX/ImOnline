@@ -5,9 +5,10 @@
 
     <gradient
 
-        android:startColor="@color/white"
-        android:endColor="@color/black"
-        android:angle="135">
+        android:startColor="@color/lightbluegray"
+        android:centerColor="@color/darkestwhite"
+        android:endColor="@color/lightblue"
+        android:angle="300">
 
     </gradient>
 
