@@ -2,23 +2,6 @@ plugins {
     id 'com.android.application'
 }
 
-def githubProperties = new Properties()
-githubProperties.load(new FileInputStream(rootProject.file("github.properties")))
-repositories {
-    maven {
-        name = "GitHubPackages"
-
-        url = uri("https://maven.pkg.github.com/Cuberto/liquid-swipe-android")
-        credentials {
-            /** Create github.properties in root project folder file with
-             ** gpr.usr=GITHUB_USER_ID & gpr.key=PERSONAL_ACCESS_TOKEN
-             ** Or set env variable GPR_USER & GPR_API_KEY if not adding a properties file**/
-            username = githubProperties['gpr.usr'] ?: System.getenv("GPR_USER")
-            password = githubProperties['gpr.key'] ?: System.getenv("GPR_API_KEY")
-        }
-    }
-}
-
 android {
     namespace 'com.pac.imonline'
     compileSdk 33
@@ -53,7 +36,4 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
-
-    //consume library
-    implementation 'com.cuberto:liquid-swipe:1.0.0'
 }
