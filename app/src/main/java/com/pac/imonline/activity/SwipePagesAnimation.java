@@ -149,7 +149,7 @@ public class SwipePagesAnimation extends AppCompatActivity {
 
     private void launchHomeScreen() {
         introPref.setIsFirstTimeLaunch(false);
-        startActivity(new Intent(SwipePagesAnimation.this, MainActivity.class));
+        startActivity(new Intent(SwipePagesAnimation.this, LoginActivity.class));
         finish();
     }
 }

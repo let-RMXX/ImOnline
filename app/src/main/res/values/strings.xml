@@ -4,4 +4,6 @@
     <string name="login_register">Don\'t have an account? Resgister!</string>
     <string name="login_email">Email</string>
     <string name="login_login">Login</string>
+    <string name="swipe_communities1">Welcome to the</string>
+    <string name="swipe_communities2">Communities</string>
 </resources>
