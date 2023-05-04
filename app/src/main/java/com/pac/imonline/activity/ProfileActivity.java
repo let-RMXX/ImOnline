@@ -18,7 +18,9 @@ import java.util.ArrayList;
 public class ProfileActivity extends AppCompatActivity {
 
     private ArrayList<WorkActivity> workList;
+    private ArrayList<EducationActivity> educationList;
     private RecyclerView recyclerView;
+    private RecyclerView recyclerViewedu;
     private Button button_editprofile;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +29,13 @@ public class ProfileActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerViewWork);
         workList = new ArrayList<>();
 
+        recyclerViewedu = findViewById(R.id.recyclerViewEducation);
+        educationList = new ArrayList<>();
+
         setUserInfo();
+        setUserInfo2();
         setAdapter();
+        setAdapter2();
 
         button_editprofile = (Button) findViewById(R.id.button_editprofile);
         button_editprofile.setOnClickListener(new View.OnClickListener() {
@@ -56,6 +63,19 @@ public class ProfileActivity extends AppCompatActivity {
     public void openEditProfileActivity(){
         Intent editprofile = new Intent(this, EditProfileActivity.class);
         startActivity(editprofile);
+    }
+
+    private void setAdapter2(){
+        ReciclerEducationAdapter adapter = new ReciclerEducationAdapter(educationList);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager((getApplicationContext()));
+        recyclerViewedu.setLayoutManager(layoutManager);
+        recyclerViewedu.setItemAnimator(new DefaultItemAnimator());
+        recyclerViewedu.setAdapter(adapter);
+    }
+
+    private void setUserInfo2(){
+        educationList.add((new EducationActivity("ESTIG","2022-Present","CTeSP","very good very nice")));
+
     }
 
 }

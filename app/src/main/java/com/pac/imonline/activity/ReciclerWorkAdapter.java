@@ -27,9 +27,9 @@ public class ReciclerWorkAdapter extends RecyclerView.Adapter<ReciclerWorkAdapte
 
     public MyViewHolder(final View view){
         super(view);
-        company = view.findViewById(R.id.textViewCompanyName);
+        company = view.findViewById(R.id.textViewUniversityName);
         date = view.findViewById(R.id.textViewDate);
-        role = view.findViewById(R.id.textViewRole);
+        role = view.findViewById(R.id.textViewGraduation);
         description = view.findViewById(R.id.textViewDescription);
     }
 
