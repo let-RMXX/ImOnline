@@ -10,7 +10,7 @@ public class MemoryDatabase {
     private static List<ProfileActivity2> initializeList() {
         if (profile == null){
             profile = new ArrayList<>();
-            profile.add(new ProfileActivity2("Calos", "963951139","https://w7.pngwing.com/pngs/643/454/png-transparent-business-game-avatar-computer-program-google-smart-object-game-child-face.png"));
+            profile.add(new ProfileActivity2(1, "https://www.w3schools.com/howto/img_avatar.png", "Carlos Álvaro", "Student", "963951139", "carlosa@outlook.pt","Beja"));
 
         }
         return profile;

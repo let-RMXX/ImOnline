@@ -21,6 +21,8 @@ public class ProfileActivity extends AppCompatActivity {
     private ArrayList<EducationActivity> educationList;
     private RecyclerView recyclerView;
     private RecyclerView recyclerViewedu;
+
+    private ProfileActivity2 profile2;
     private Button button_editprofile;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,8 +31,11 @@ public class ProfileActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerViewWork);
         workList = new ArrayList<>();
 
+
         recyclerViewedu = findViewById(R.id.recyclerViewEducation);
         educationList = new ArrayList<>();
+
+
 
         setUserInfo();
         setUserInfo2();
@@ -75,7 +80,6 @@ public class ProfileActivity extends AppCompatActivity {
 
     private void setUserInfo2(){
         educationList.add((new EducationActivity("ESTIG","2022-Present","CTeSP","very good very nice")));
-
     }
 
 }
