@@ -24,20 +24,11 @@
             tools:srcCompat="@tools:sample/avatars" />
 
         <Button
-            android:id="@+id/button_editprofile"
-            android:layout_width="162dp"
-            android:layout_height="48dp"
-
-            android:layout_marginStart="2dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginEnd="109dp"
-            android:layout_marginRight="109dp"
+            android:id="@+id/button_apply"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
             android:backgroundTint="#FFEB3B"
-            android:text="Edit"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageViewAvatar" />
+            android:text="Apply" />
 
         <TextView
             android:id="@+id/textViewContacts"
@@ -51,7 +42,7 @@
         <EditText
             android:id="@+id/editTextTextPersonName4"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="45dp"
             android:ems="10"
             android:inputType="textPersonName"
             android:text="Phone"
@@ -60,7 +51,7 @@
         <EditText
             android:id="@+id/editTextTextPersonName3"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="45dp"
             android:ems="10"
             android:inputType="textPersonName"
             android:text="Email"
@@ -69,7 +60,7 @@
         <EditText
             android:id="@+id/editTextTextPersonName2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="45dp"
             android:ems="10"
             android:inputType="textPersonName"
             android:text="Location"
@@ -92,8 +83,8 @@
         <LinearLayout
 
             android:id="@+id/linearLayout2"
-            android:layout_width="0dp"
-            android:layout_height="80dp"
+            android:layout_width="227dp"
+            android:layout_height="120dp"
             android:layout_marginTop="24dp"
             android:background="@drawable/roundstyle"
             android:backgroundTint="#FFEB3B"
@@ -103,7 +94,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <EditText
-                android:id="@+id/editTextTextPersonName5"
+                android:id="@+id/editTextTextProfileName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -145,7 +136,7 @@
             <EditText
                 android:id="@+id/editTextTextPersonName7"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="45dp"
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="textPersonName"
@@ -179,7 +170,7 @@
             <EditText
                 android:id="@+id/editTextTextPersonName8"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="45dp"
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="textPersonName"
