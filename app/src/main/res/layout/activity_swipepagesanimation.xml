@@ -26,11 +26,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="26dp"
+        android:layout_marginBottom="15dp"
         android:fontFamily="monospace"
         android:text="NEXT"
         android:textAlignment="center"
-        android:textColor="@color/black"
+        android:textColor="@color/darkgrey_one"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

@@ -13,25 +13,30 @@
     <color name="light_brown">#C89C76</color>
 
     //SwipePages Dots inactive Colors
-    <color name="dark_one">#dcdcdc</color>
-    <color name="dark_two">#dcdcdc</color>
-    <color name="dark_three">#dcdcdc</color>
+    <color name="lightgrey_one">#EEEEEE</color>
+    <color name="lightgrey_two">#EEEEEE</color>
+    <color name="lightgrey_three">#EEEEEE</color>
 
     //SwipePages Dots active Colors
-    <color name="orange_one">#e65252</color>
-    <color name="orange_two">#e65252</color>
-    <color name="orange_three">#e65252</color>
+    <color name="darkgrey_one">#393E46</color>
+    <color name="darkgrey_two">#393E46</color>
+    <color name="darkgrey_three">#393E46</color>
 
+    //SwipePages Main Color
+    <color name="teal">#00ADB5</color>
+
+    //SwipePages Dots active Colors
     <array name="active">
-        <item>@color/orange_one</item>
-        <item>@color/orange_two</item>
-        <item>@color/orange_three</item>
+        <item>@color/darkgrey_one</item>
+        <item>@color/darkgrey_two</item>
+        <item>@color/darkgrey_three</item>
     </array>
 
+    //SwipePages Dots inactive Colors
     <array name="inactive">
-        <item>@color/dark_one</item>
-        <item>@color/dark_two</item>
-        <item>@color/dark_three</item>
+        <item>@color/lightgrey_one</item>
+        <item>@color/lightgrey_two</item>
+        <item>@color/lightgrey_three</item>
     </array>
 
 
