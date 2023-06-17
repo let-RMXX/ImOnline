@@ -23,7 +23,8 @@
     <TextView
         android:id="@+id/subtitleView"
         android:layout_width="370dp"
-        android:layout_height="200dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="30dp"
         android:fontFamily="monospace"
         android:text="A brand new platform to help you on your professional journey"
         android:textAlignment="center"
