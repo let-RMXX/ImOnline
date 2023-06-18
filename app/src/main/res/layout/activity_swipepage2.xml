@@ -12,7 +12,7 @@
         android:layout_width="370dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="100dp"
-        android:text="You can connect connect with other professionals that have the same interests has you"
+        android:text="You can connect with other professionals that have the same interests has you"
         android:textAlignment="center"
         android:textColor="@color/lightgrey_one"
         android:textSize="34sp"
