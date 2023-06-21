@@ -5,21 +5,21 @@ import java.util.List;
 
 public class MemoryDatabase {
 
-    private static List<ProfileActivity2> profile;
+    private static List<ProfileActivity> profile;
 
-    private static List<ProfileActivity2> initializeList() {
+    private static List<ProfileActivity> initializeList() {
         if (profile == null){
             profile = new ArrayList<>();
-            profile.add(new ProfileActivity2(1, "https://www.w3schools.com/howto/img_avatar.png", "Carlos Álvaro", "Student", "963951139", "carlosa@outlook.pt","Beja"));
+            profile.add(new ProfileActivity(1, "https://www.w3schools.com/howto/img_avatar.png", "Carlos Álvaro", "Student", "963951139", "carlosa@outlook.pt","Beja"));
 
         }
         return profile;
     }
-    public static List<ProfileActivity2> getAllContacts() {
+    public static List<ProfileActivity> getAllContacts() {
         return initializeList();
     }
 
-    public static ProfileActivity2 getContactForPosition(int position) {
+    public static ProfileActivity getContactForPosition(int position) {
         return initializeList().get(position);
     }
 }

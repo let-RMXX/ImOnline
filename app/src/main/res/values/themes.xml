@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.ImOnline" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimary">@color/med_blue</item>
         <item name="colorPrimaryVariant">@color/black</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
@@ -13,4 +13,9 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+        <style name="SlideActivityAnimation" parent="@android:style/Animation.Activity">
+            <item name="android:activityOpenEnterAnimation">@anim/slide_right</item>
+            <item name="android:activityOpenExitAnimation">@anim/slide_out_left</item>
+
+        </style>
 </resources>

@@ -23,7 +23,7 @@
             android:exported="false"/>
 
         <activity
-            android:name=".activity.ProfileActivity"
+            android:name=".activity.ProfileActivityMain"
             android:exported="true"/>
 
             <activity

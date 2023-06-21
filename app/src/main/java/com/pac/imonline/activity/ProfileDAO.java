@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface ProfileDAO {
 
-    @Query("SELECT * FROM ProfileActivity2")
-    List<ProfileActivity2> getAll();
+    @Query("SELECT * FROM ProfileActivity")
+    List<ProfileActivity> getAll();
 
 }
