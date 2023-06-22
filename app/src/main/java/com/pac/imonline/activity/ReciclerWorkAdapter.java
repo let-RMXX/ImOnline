@@ -38,7 +38,7 @@ public class ReciclerWorkAdapter extends RecyclerView.Adapter<ReciclerWorkAdapte
     @NonNull
     @Override
     public ReciclerWorkAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemview = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_list_work,parent, false);
+        View itemview = LayoutInflater.from(parent.getContext()).inflate(R.layout.work_experience_item,parent, false);
         return new MyViewHolder(itemview);
     }
 

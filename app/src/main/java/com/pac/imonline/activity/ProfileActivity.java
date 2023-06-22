@@ -11,7 +11,6 @@ public class ProfileActivity {
     private String name;
     private String about;
     private String phoneNumber;
-
     private String email;
     private String location;
 

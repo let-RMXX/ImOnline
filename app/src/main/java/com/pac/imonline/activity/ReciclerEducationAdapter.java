@@ -35,7 +35,7 @@ public class ReciclerEducationAdapter extends RecyclerView.Adapter<ReciclerEduca
     @NonNull
     @Override
     public ReciclerEducationAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemview = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_list_education,parent,false);
+        View itemview = LayoutInflater.from(parent.getContext()).inflate(R.layout.education_item,parent,false);
         return new MyViewHolder(itemview);
     }
 
