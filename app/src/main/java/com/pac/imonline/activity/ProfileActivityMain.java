@@ -14,20 +14,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProfileActivityMain extends AppCompatActivity {
+    private RecyclerView recyclerViewEducation;
+    private RecyclerView recyclerViewWork;
     private EducationAdapter educationAdapter;
-    private List<EducationActivity> educationActivityList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-
-        RecyclerView recyclerView = findViewById(R.id.recyclerViewEducation);
+        //Referencias das RecyclerViews
+        RecyclerView recyclerViewEducation = findViewById(R.id.recyclerViewEducation);
+        RecyclerView recyclerViewWork = findViewById(R.id.recyclerViewWork);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        recyclerView.setAdapter(this.educationAdapter);
-        recyclerView.setLayoutManager(layoutManager);
+        //Adapters
+        //educationAdapter = new EducationAdapter();
 
-        educationActivityList = new ArrayList<>();
+        recyclerViewEducation.setAdapter(this.educationAdapter);
+        recyclerViewEducation.setLayoutManager(layoutManager);
+
+        List<EducationActivity> educationActivityList = new ArrayList<>();
     }
 }
 
