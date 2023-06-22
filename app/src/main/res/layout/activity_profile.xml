@@ -21,17 +21,18 @@
             android:layout_marginTop="24dp"
             android:layout_marginEnd="24dp"
             android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/button2"
+            app:layout_constraintBottom_toTopOf="@+id/button_edit"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:srcCompat="@tools:sample/avatars" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/button_edit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:backgroundTint="@color/light_blue"
+            android:onClick="EditProfile"
             android:text="Edit"
             app:layout_constraintEnd_toEndOf="@+id/imageView4"
             app:layout_constraintStart_toStartOf="@+id/imageView4"
@@ -117,12 +118,14 @@
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewEducation"
             android:layout_width="410dp"
             android:layout_height="150dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
@@ -151,6 +154,7 @@
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewWork"
             android:layout_width="410dp"
             android:layout_height="148dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -176,8 +180,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout5"
         android:layout_width="412dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="32dp"
+        android:layout_height="100dp"
         android:background="@drawable/profile_background_recycleviews"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -185,8 +188,9 @@
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout4">
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewSkills"
             android:layout_width="410dp"
-            android:layout_height="148dp"
+            android:layout_height="100dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -205,5 +209,19 @@
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4" />
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="409dp"
+        android:layout_height="47dp"
+        android:background="@drawable/bottom_nav_background"
+        app:menu="@menu/bottom_nav_menu"
+        app:itemIconTint="@drawable/item_selector"
+        app:itemRippleColor="@android:color/transparent"
+        app:labelVisibilityMode="unlabeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout5" />
 </androidx.constraintlayout.widget.ConstraintLayout>
