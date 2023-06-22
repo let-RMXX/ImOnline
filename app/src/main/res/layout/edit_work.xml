@@ -7,10 +7,24 @@
     android:background="@drawable/profile_background_recycleviews">
 
 
+    <EditText
+        android:id="@+id/editTextRole"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="100dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Role"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextWorkDate" />
+
     <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:id="@+id/imageView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="100dp"
@@ -20,69 +34,56 @@
         app:srcCompat="@drawable/logo" />
 
     <EditText
-        android:id="@+id/editTextUni_name"
+        android:id="@+id/editTextCompanyName"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_marginStart="100dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="100dp"
         android:ems="10"
-        android:hint="University Name"
         android:inputType="textPersonName"
+        android:hint="Company Name"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 
     <EditText
-        android:id="@+id/editTextDate"
+        android:id="@+id/editTextWorkDate"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_marginStart="100dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="100dp"
         android:ems="10"
+        android:inputType="textPersonName"
         android:hint="Date"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextUni_name" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextCompanyName" />
 
     <EditText
-        android:id="@+id/editTextGraduation"
+        android:id="@+id/editTextWorkDescription"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_marginStart="100dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="100dp"
         android:ems="10"
-        android:hint="Graduation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
-
-    <EditText
-        android:id="@+id/editTextDescription"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="100dp"
-        android:ems="10"
+        android:inputType="textPersonName"
         android:hint="Description"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextGraduation" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextRole" />
 
     <Button
-        android:id="@+id/button_saveEducation"
+        android:id="@+id/button_apply_work"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="100dp"
-        android:onClick="editEducation"
         android:text="Apply"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDescription" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextWorkDescription" />
 </androidx.constraintlayout.widget.ConstraintLayout>
