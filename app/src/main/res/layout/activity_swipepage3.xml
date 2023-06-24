@@ -5,4 +5,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/teal"
-    tools:context=".activity.SwipePage3Activity"/>
+    tools:context=".activity.SwipePage3Activity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="We offer a variety of communities, so we can connect our users directly with large companies from all around the world "
+        android:textAlignment="center"
+        android:textColor="@color/darkgrey_one"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="This makes it easy for our users to find internships, jobs and advance their careers."
+        android:textAlignment="center"
+        android:textColor="@color/darkgrey_one"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,13 +11,23 @@
         android:id="@+id/titleView3"
         android:layout_width="370dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="100dp"
+        android:layout_marginTop="70dp"
         android:text="You can connect with other professionals that have the same interests has you"
         android:textAlignment="center"
-        android:textColor="@color/lightgrey_one"
+        android:textColor="@color/darkgrey_one"
         android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="80dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/defimgcommunities" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
