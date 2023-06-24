@@ -3,6 +3,7 @@ package com.pac.imonline.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -33,6 +34,20 @@ public class EditWorkActivity extends AppCompatActivity {
         this.editTextCompanyName = findViewById(R.id.editTextCompanyName);
         this.editTextWorkDate = findViewById(R.id.editTextWorkDate);
         this.editTextRole = findViewById(R.id.editTextRole);
-        this.editTextWorkDescription = findViewById(R.id.editTextDescription);
+        this.editTextWorkDescription = findViewById(R.id.editTextWorkDescription);
+    }
+
+    public void editWork(View view){
+        String compName = this.editTextCompanyName.getText().toString();
+        String workDate = this.editTextWorkDate.getText().toString();
+        String role = this.editTextRole.getText().toString();
+        String WorkDescription = this.editTextWorkDescription.getText().toString();
+
+        WorkActivity newWorld = new WorkActivity(0, compName, workDate, role, WorkDescription);
+
+
+        //TODO APP DATAABSE PARA DAR INSERT OU UPDATE????
+        // AppDatabase.getInstance(this).getEducationDAO().insert(newEducationActivity);???
+        //finish();
     }
 }
