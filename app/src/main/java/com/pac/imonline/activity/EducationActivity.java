@@ -1,18 +1,25 @@
 package com.pac.imonline.activity;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+@Entity
 public class EducationActivity {
+    @PrimaryKey(autoGenerate = true)
+    private long id;
     private String university_name;
     private String date;
     private String graduation;
     private String description;
 
-    public EducationActivity(String university_name, String date, String graduation, String description) {
+    public EducationActivity(long id, String university_name, String date, String graduation, String description) {
+        this.id = id;
         this.university_name = university_name;
         this.date = date;
         this.graduation = graduation;
         this.description = description;
     }
 
+    public long getId(){return id;}
     public String getUniversity_name() {
         return university_name;
     }

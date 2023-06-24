@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface ProfileDAO {
 
-    @Query("SELECT * FROM profileactivity")
+    @Query("SELECT * FROM ProfileActivity")
     List<ProfileActivity> getAll();
 
     @Query("SELECT * FROM profileactivity WHERE id = profileId")

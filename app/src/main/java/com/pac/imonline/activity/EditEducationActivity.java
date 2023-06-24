@@ -44,7 +44,7 @@ public class EditEducationActivity extends AppCompatActivity {
         String graduation = this.editTextGraduation.getText().toString();
         String description = this.editTextDescription.getText().toString();
 
-        EducationActivity newEducation = new EducationActivity(uniName, date, graduation, description);
+        EducationActivity newEducation = new EducationActivity(0,uniName, date, graduation, description);
 
 
         //TODO APP DATAABSE PARA DAR INSERT OU UPDATE????
