@@ -43,11 +43,11 @@ public class EditWorkActivity extends AppCompatActivity {
         String role = this.editTextRole.getText().toString();
         String WorkDescription = this.editTextWorkDescription.getText().toString();
 
-        WorkActivity newWorld = new WorkActivity(0, compName, workDate, role, WorkDescription);
+        WorkActivity newWork = new WorkActivity(0, compName, workDate, role, WorkDescription);
 
 
         //TODO APP DATAABSE PARA DAR INSERT OU UPDATE????
-        // AppDatabase.getInstance(this).getEducationDAO().insert(newEducationActivity);???
-        //finish();
+        AppDatabase.getInstance(this).getWorkDAO().insert(newWork);
+        finish();
     }
 }

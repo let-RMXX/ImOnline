@@ -48,7 +48,7 @@ public class EditEducationActivity extends AppCompatActivity {
 
 
         //TODO APP DATAABSE PARA DAR INSERT OU UPDATE????
-        // AppDatabase.getInstance(this).getEducationDAO().insert(newEducationActivity);???
-        //finish();
+        AppDatabase.getInstance(this).getEducationDAO().insert(newEducation);
+        finish();
     }
 }
