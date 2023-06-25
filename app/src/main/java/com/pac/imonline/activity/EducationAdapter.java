@@ -13,45 +13,47 @@ import com.pac.imonline.R;
 
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class EducationAdapter extends RecyclerView.Adapter<EducationAdapter.ViewHolder> {
+public class EducationAdapter extends RecyclerView.Adapter<EducationAdapter.ViewHolder>{
 
-    private List<EducationActivity> educationList;
 
-    public EducationAdapter(List<EducationActivity> educationList, Context context) {
-        this.educationList = educationList;
-        this.context = context;
-    }
+    private List<EducationActivity> educationActivityList;
+    private EducationAdapterEventListener eventListener;
 
-    private Context context;
-
-    public EducationAdapter() {
-
+    public EducationAdapter(EducationAdapterEventListener eventListener) {
+        this.educationActivityList = new ArrayList<>();
+        this.eventListener = eventListener;
     }
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public EducationAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.education_item, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        EducationActivity educationItem = educationList.get(position);
-        holder.uni_name.setText(educationItem.getUniversity_name());
-        holder.date.setText(educationItem.getDate());
-        holder.graduation.setText(educationItem.getGraduation());
-        holder.description.setText(educationItem.getDescription());
+    public void onBindViewHolder(@NonNull EducationAdapter.ViewHolder holder, int position) {
+        final EducationActivity educationActivity = educationActivityList.get(position);
+        holder.uni_name.setText(educationActivity.getUniversity_name());
+        holder.date.setText(educationActivity.getDate());
+        holder.graduation.setText(educationActivity.getGraduation());
+        holder.description.setText(educationActivity.getDescription());
     }
 
     @Override
     public int getItemCount() {
-        return educationList.size();
+        return educationActivityList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public void refreshList(List<EducationActivity> newEducationList) {
+        educationActivityList = newEducationList;
+        notifyDataSetChanged();
+    }
+
+    public class ViewHolder extends RecyclerView.ViewHolder {
         public TextView uni_name;
         public TextView date;
         public TextView graduation;
@@ -59,11 +61,16 @@ public class EducationAdapter extends RecyclerView.Adapter<EducationAdapter.View
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-
-            uni_name = (TextView) itemView.findViewById(R.id.textViewUniversityName);
-            date = (TextView) itemView.findViewById(R.id. textViewDate);
-            graduation = (TextView) itemView.findViewById(R.id.textViewGraduation);
-            description = (TextView)  itemView.findViewById(R.id.textViewDescription);
+            uni_name = itemView.findViewById(R.id.textViewUniversityName);
+            date = itemView.findViewById(R.id.textViewDate);
+            graduation = itemView.findViewById(R.id.textViewGraduation);
+            description = itemView.findViewById(R.id.textViewDescription);
         }
     }
+
+    public interface EducationAdapterEventListener {
+
+    }
 }
+
+

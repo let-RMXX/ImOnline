@@ -47,7 +47,7 @@ public class EditEducationActivity extends AppCompatActivity {
         EducationActivity newEducation = new EducationActivity(0,uniName, date, graduation, description);
 
 
-        //TODO APP DATAABSE PARA DAR INSERT OU UPDATE????
+        //TODO APP DATAABSE PARA DAR INSERT OU UPDATE???
         AppDatabase.getInstance(this).getEducationDAO().insert(newEducation);
         finish();
     }
