@@ -1,12 +1,13 @@
 package com.pac.imonline.activity.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.pac.imonline.R;
+import com.pac.imonline.activity.RegisterActivity;
 
 public class LoginActivity extends AppCompatActivity {
 

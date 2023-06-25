@@ -1,4 +1,4 @@
-package com.pac.imonline.activity;
+package com.pac.imonline.activity.activity;
 
 import android.content.Context;
 import android.content.SharedPreferences;

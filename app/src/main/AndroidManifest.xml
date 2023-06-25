@@ -21,13 +21,13 @@
             android:name=".activity.activity.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.CreateCommunityActivity"
+            android:name=".activity.activity.CreateCommunityActivity"
             android:exported="false"/>
         <activity
-            android:name=".activity.SwipePagesAnimation"
+            android:name=".activity.activity.SwipePagesAnimation"
             android:exported="false"/>
        <activity
-           android:name=".activity.CommunityListActivity"
+           android:name=".activity.activity.CommunityListActivity"
            android:exported="false"/>
         <activity
             android:name=".activity.activity.MainActivity"

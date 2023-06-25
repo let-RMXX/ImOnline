@@ -1,4 +1,4 @@
-package com.pac.imonline.activity;
+package com.pac.imonline.activity.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
