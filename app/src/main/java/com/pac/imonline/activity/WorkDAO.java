@@ -12,8 +12,8 @@ public interface WorkDAO {
     @Query("SELECT * FROM WorkActivity")
     List<WorkActivity> getAll();
 
-    //@Query("SELECT * FROM WorkActivity WHERE id = workId")
-    //WorkActivity getById(long workId);
+    @Query("SELECT * FROM WorkActivity WHERE id = :workId")
+    WorkActivity getById(long workId);
 
     @Insert
     void insert ( WorkActivity workActivity);

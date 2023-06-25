@@ -12,8 +12,9 @@ public interface EducationDAO {
     @Query("SELECT * FROM EducationActivity")
     List<EducationActivity> getAll();
 
-    //@Query("SELECT * FROM EducationActivity WHERE id = educationId")
-    //EducationActivity getById(long educationId);
+    @Query("SELECT * FROM EducationActivity WHERE id = :educationId")
+    EducationActivity getById(long educationId);
+
 
     @Insert
     void insert ( EducationActivity educationActivity);
