@@ -27,12 +27,13 @@ public class ProfileActivityMain extends AppCompatActivity implements EducationA
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_profile);
             // Referencias das RecyclerViews
-            recyclerViewEducation = findViewById(R.id.recyclerViewEducation);
-            recyclerViewWork = findViewById(R.id.recyclerViewWork);
+            RecyclerView recyclerViewEducation = findViewById(R.id.recyclerViewEducation);
+            RecyclerView recyclerViewWork = findViewById(R.id.recyclerViewWork);
 
             AppDatabase db = AppDatabase.getInstance(this);
             EducationDAO educationDAO = db.getEducationDAO();
             WorkDAO workDAO = db.getWorkDAO();
+
             educationAdapter = new EducationAdapter(this);
 
             LinearLayoutManager layoutManager = new LinearLayoutManager(this);
