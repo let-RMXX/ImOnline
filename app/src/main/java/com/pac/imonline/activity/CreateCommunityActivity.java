@@ -60,6 +60,9 @@ public class CreateCommunityActivity extends AppCompatActivity {
                 String communityName = communityNameEditText.getText().toString().trim();
                 // Perform further actions with the community data (e.g., save to database)
 
+                // Launch the MainActivity or any other desired activity
+                Intent intent = new Intent(CreateCommunityActivity.this, CommunityListActivity.class);
+                startActivity(intent);
                 finish(); // Finish the activity
             }
         });

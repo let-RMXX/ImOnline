@@ -1,6 +1,5 @@
 package com.pac.imonline.activity;
 
-import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,10 +9,12 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.pac.imonline.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
+
 
 public class CommunityAdapter extends RecyclerView.Adapter<CommunityAdapter.CommunityViewHolder> {
 
@@ -59,20 +60,30 @@ public class CommunityAdapter extends RecyclerView.Adapter<CommunityAdapter.Comm
         }
 
         public void bind(Community community) {
-            // Load the images using an image loading library (e.g., Picasso or Glide)
-            Picasso.get().load(community.getPhotoUrl()).into(photoImageView);
-            Picasso.get().load(community.getBannerUrl()).into(bannerImageView);
 
-            nameTextView.setText(community.getName());
+            if (community != null) {
+                // Add null check for photoUrl
+                if (community.getPhotoUrl() != null) {
+                    // Load the community photo using the photoUrl
+                    Glide.with(itemView.getContext())
+                            .load(community.getPhotoUrl())
+                            .into(photoImageView);
+                }
 
-            if (community.isOwner()) {
-                ownerBadge.setVisibility(View.VISIBLE);
-            } else {
-                ownerBadge.setVisibility(View.GONE);
+                nameTextView.setText(community.getName());
+
+                // Load the images using an image loading library (e.g., Picasso or Glide)
+                Picasso.get().load(community.getPhotoUrl()).into(photoImageView);
+                Picasso.get().load(community.getBannerUrl()).into(bannerImageView);
+
+                nameTextView.setText(community.getName());
+
+                if (community.isOwner()) {
+                    ownerBadge.setVisibility(View.VISIBLE);
+                } else {
+                    ownerBadge.setVisibility(View.GONE);
+                }
             }
         }
     }
 }
-
-
-
