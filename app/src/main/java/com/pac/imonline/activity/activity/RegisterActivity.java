@@ -78,7 +78,10 @@ public class RegisterActivity extends AppCompatActivity {
                         @Override
                         public void run() {
                             Toast.makeText(RegisterActivity.this, "Registration successful", Toast.LENGTH_SHORT).show();
-                            // Proceed to the next activity
+                            // Proceed to the login activity
+                            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                            startActivity(intent);
+                            finish(); // Finish the current activity
                         }
                     });
                 } else {
