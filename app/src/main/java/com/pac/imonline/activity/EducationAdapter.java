@@ -53,6 +53,18 @@ public class EducationAdapter extends RecyclerView.Adapter<EducationAdapter.View
         holder.date.setText(educationActivity.getDate());
         holder.graduation.setText(educationActivity.getGraduation());
         holder.description.setText(educationActivity.getDescription());
+
+        holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                if (eventListener != null) {
+                    eventListener.onEducationLongClicked(educationActivity.getId());
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        });
     }
 
     @Override
@@ -81,6 +93,7 @@ public class EducationAdapter extends RecyclerView.Adapter<EducationAdapter.View
     }
 
     public interface EducationAdapterEventListener {
+        void onEducationLongClicked(long educationActivityId);
 
     }
 }

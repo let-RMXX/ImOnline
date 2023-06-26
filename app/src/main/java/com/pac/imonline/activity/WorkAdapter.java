@@ -58,13 +58,31 @@ public class WorkAdapter extends RecyclerView.Adapter<WorkAdapter.ViewHolder> {
         holder.textViewDateWork.setText(work.getDate());
         holder.textViewRole.setText(work.getRole());
         holder.textViewDescriptionWork.setText(work.getDescription());
-    }
+
+        holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                if (eventListener != null){
+                    eventListener.onWorkLongClicked(work.getId());
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        });
+
+        }
+
 
     @Override
     public int getItemCount() {
         return listWork.size();
     }
 
+    public void refreshListWork(List<WorkActivity> newWorkList){
+        listWork = newWorkList;
+        notifyDataSetChanged();
+    }
     public class ViewHolder extends RecyclerView.ViewHolder{
 
         public TextView textViewCompanyName;
@@ -81,5 +99,7 @@ public class WorkAdapter extends RecyclerView.Adapter<WorkAdapter.ViewHolder> {
     }
 
     public interface WorkAdapterEventListener {
+
+        void onWorkLongClicked(long workId);
     }
 }
