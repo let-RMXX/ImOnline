@@ -27,18 +27,20 @@
         android:layout_marginTop="64dp"
         android:layout_marginBottom="24dp"
         android:background="@drawable/button_background_fill"
+        android:onClick="signinButton"
         android:text="Sign In"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintBottom_toTopOf="@+id/SignUpButton1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logo1" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/SignUpButton1"
         android:layout_width="150dp"
         android:layout_height="60dp"
         android:layout_marginTop="24dp"
         android:background="@drawable/button_background_fill"
+        android:onClick="signupButton"
         android:text="Sign Up"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
