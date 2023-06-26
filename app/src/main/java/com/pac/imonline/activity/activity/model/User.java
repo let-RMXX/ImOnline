@@ -1,4 +1,4 @@
-package com.pac.imonline.activity.model;
+package com.pac.imonline.activity.activity.model;
 
 public class User {
 
