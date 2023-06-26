@@ -1,136 +1,84 @@
 package com.pac.imonline.activity.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.pac.imonline.R;
-import com.pac.imonline.activity.activity.DatabaseAuth;
-import com.pac.imonline.activity.activity.MainActivity;
-import com.pac.imonline.helper.DatabaseConfig;
-import com.pac.imonline.model.User;
-
 
 public class RegisterActivity extends AppCompatActivity {
+    private EditText usernameEditText;
+    private EditText emailEditText;
+    private EditText passwordEditText;
+    private Button registerButton;
 
-    private EditText userField, emailField, passwordField;
-    private Button signInButton;
-    private User user;
-
-    private DatabaseAuth auth;
+    private UserRepository userRepository;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        inicializeComponents();
+        usernameEditText = findViewById(R.id.enterUsernameRegister);
+        emailEditText = findViewById(R.id.enterEmailRegister);
+        passwordEditText = findViewById(R.id.enterPasswordRegister);
+        registerButton = findViewById(R.id.SignUpButton);
 
-        // Sign In User
-        signInButton.setOnClickListener(new View.OnClickListener() {
+        userRepository = new UserRepository(this);
+
+        registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-
-                String userText = userField.getText().toString();
-                String emailText = emailField.getText().toString();
-                String passwordText = passwordField.getText().toString();
-
-                if ( !userText.isEmpty()){
-
-                    if ( !emailText.isEmpty()){
-
-                        if ( !passwordText.isEmpty()){
-
-                            user = new User();
-                            user.setUsername(userText);
-                            user.setEmail(emailText);
-                            user.setPassword(passwordText);
-                            Register(user);
-
-                        }else {
-
-                            Toast.makeText(RegisterActivity.this,
-                                    "Password Missing!",
-                                    Toast.LENGTH_SHORT).show();
-
-                        }
-
-                    }else {
-
-                        Toast.makeText(RegisterActivity.this,
-                                "Email Missing!",
-                                Toast.LENGTH_SHORT).show();
-
-                    }
-
-                }else {
-
-                    Toast.makeText(RegisterActivity.this,
-                            "Username Missing!",
-                            Toast.LENGTH_SHORT).show();
-
-                }
-
+            public void onClick(View v) {
+                registerUser();
             }
         });
-
     }
 
-    // Method responsible for registering users with email and password and
-    // make validations when making the registration
-    public void Register(User user){
+    private void registerUser() {
+        String username = usernameEditText.getText().toString().trim();
+        String email = emailEditText.getText().toString().trim();
+        String password = passwordEditText.getText().toString().trim();
 
-        auth = DatabaseConfig.getDatabaseAuth();
-        auth.createUserWithEmailAndPassword(
+        // Check if any field is empty
+        if (username.isEmpty() || email.isEmpty() || password.isEmpty()) {
+            Toast.makeText(this, "All fields are required", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
-                user.getEmail(),
-                user.getPassword()
+        // Check if the email is valid
+        if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            Toast.makeText(this, "Invalid email address", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
-        ).addOnCompleteListener(
-
-                this,
-                new OnCompleteListener<AuthResult>(){
-
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task){
-
-                        if (task.isSucessful()){
-
-                            Toast.makeText(RegisterActivity.this,
-                                    "Successfully Registered",
-                                    Toast.LENGTH_SHORT).show();
-
-                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                            finish();
-
-                        }else{
-
-
-
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                User user = new User(username, email, password);
+                long result = userRepository.registerUser(user);
+                if (result != -1) {
+                    // Successful registration
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(RegisterActivity.this, "Registration successful", Toast.LENGTH_SHORT).show();
+                            // Proceed to the next activity
                         }
-
-                    }
-
+                    });
+                } else {
+                    // Registration failed
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(RegisterActivity.this, "Registration failed", Toast.LENGTH_SHORT).show();
+                        }
+                    });
                 }
-
+            }
+        }).start();
     }
-        );
-
-}
-
-    public void inicializeComponents(){
-
-        userField = findViewById(R.id.enterUsernameRegister);
-        emailField = findViewById(R.id.enterEmailRegister);
-        passwordField = findViewById(R.id.enterPasswordRegister);
-        signInButton = findViewById(R.id.SignUpButton);
-
-    }
-
 }
