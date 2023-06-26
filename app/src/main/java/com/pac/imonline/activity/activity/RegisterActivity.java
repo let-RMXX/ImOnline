@@ -1,6 +1,12 @@
 package com.pac.imonline.activity.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,17 +18,18 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText passwordEditText;
     private Button registerButton;
     private UserRepository userRepository;
+    private ImageView registerBackButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-
         usernameEditText = findViewById(R.id.enterUsernameRegister);
         emailEditText = findViewById(R.id.enterEmailRegister);
         passwordEditText = findViewById(R.id.enterPasswordRegister);
         registerButton = findViewById(R.id.SignUpButton);
+        registerBackButton = findViewById(R.id.registerBackButton);
 
         userRepository = new UserRepository(this);
 
@@ -30,6 +37,15 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 registerUser();
+            }
+        });
+
+        registerBackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent goBack = new Intent(RegisterActivity.this, LoginRegisterActivity.class);
+                startActivity(goBack);
+                finish(); // Finish the current activity
             }
         });
     }
@@ -78,6 +94,3 @@ public class RegisterActivity extends AppCompatActivity {
         }).start();
     }
 }
-    }
-}
-
