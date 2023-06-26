@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/teal">
+    android:background="@drawable/swipe_page1_background">
 
     <TextView
         android:id="@+id/titleView"
@@ -14,23 +14,26 @@
         android:fontFamily="monospace"
         android:text="Welcome!"
         android:textAlignment="center"
-        android:textColor="@color/darkgrey_one"
+        android:textColor="@color/white"
         android:textSize="34sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/subtitleView"
-        android:layout_width="370dp"
-        android:layout_height="130dp"
-        android:layout_marginTop="30dp"
+        android:layout_width="306dp"
+        android:layout_height="235dp"
+        android:layout_marginTop="60dp"
         android:fontFamily="monospace"
         android:text="A brand new platform to help you on your professional journey"
         android:textAlignment="center"
-        android:textColor="@color/darkgrey_one"
+        android:textColor="@color/blue"
         android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logoView" />
 
@@ -42,6 +45,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titleView"
-        app:srcCompat="@drawable/logo_final" />
+        app:srcCompat="@drawable/logo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

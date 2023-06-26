@@ -18,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
 
         // Toolbar Config
         Toolbar toolbar = findViewById(R.id.toolbarMain);
-        toolbar.setTitle("Im Online");
         setSupportActionBar(toolbar);
     }
 
@@ -31,5 +30,4 @@ public class MainActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
 
     }
-
 }
