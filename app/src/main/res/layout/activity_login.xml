@@ -148,6 +148,7 @@
         android:text="Sign up"
         android:textColor="#3282B8"
         android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dontHaveTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/dontHaveTextView"
@@ -184,21 +185,23 @@
         android:id="@+id/githubImage"
         android:layout_width="45dp"
         android:layout_height="45dp"
+        app:layout_constraintBottom_toBottomOf="@+id/SignInGoogleButton"
         app:layout_constraintEnd_toEndOf="@+id/SignInGoogleButton"
         app:layout_constraintHorizontal_bias="0.127"
         app:layout_constraintStart_toStartOf="@+id/SignInGoogleButton"
-        app:srcCompat="@drawable/github_icon"
-        tools:layout_editor_absoluteY="547dp"/>
+        app:layout_constraintTop_toTopOf="@+id/SignInGoogleButton"
+        app:srcCompat="@drawable/github_icon" />
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="45dp"
         android:layout_height="45dp"
+        app:layout_constraintBottom_toBottomOf="@+id/SignInGitHubButton"
         app:layout_constraintEnd_toEndOf="@+id/SignInGitHubButton"
         app:layout_constraintHorizontal_bias="0.127"
         app:layout_constraintStart_toStartOf="@+id/SignInGitHubButton"
-        app:srcCompat="@drawable/google_icon"
-        tools:layout_editor_absoluteY="625dp" />
+        app:layout_constraintTop_toTopOf="@+id/SignInGitHubButton"
+        app:srcCompat="@drawable/google_icon" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
