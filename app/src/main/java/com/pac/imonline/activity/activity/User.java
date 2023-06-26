@@ -13,14 +13,14 @@ public class User {
     private String username;
 
     @ColumnInfo(name = "password")
-    private String passwordHash;
+    private String password;
 
     @ColumnInfo(name = "email")
     private String email;
 
-    public User(String username, String passwordHash, String email) {
+    public User(String username, String password, String email) {
         this.username = username;
-        this.passwordHash = passwordHash;
+        this.password = password;
         this.email = email;
     }
 
@@ -41,12 +41,12 @@ public class User {
         this.username = username;
     }
 
-    public String getPasswordHash() {
-        return passwordHash;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPasswordHash(String passwordHash) {
-        this.passwordHash = passwordHash;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getEmail() {

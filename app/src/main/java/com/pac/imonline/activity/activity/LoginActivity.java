@@ -40,7 +40,6 @@ public class LoginActivity extends AppCompatActivity {
         String username = usernameEditText.getText().toString().trim();
         String password = passwordEditText.getText().toString().trim();
 
-        // Check if username or password is empty
         if (username.isEmpty() || password.isEmpty()) {
             Toast.makeText(this, "Username and password are required", Toast.LENGTH_SHORT).show();
             return;
@@ -51,16 +50,13 @@ public class LoginActivity extends AppCompatActivity {
             public void run() {
                 User user = userRepository.loginUser(username, password);
                 if (user != null) {
-                    // Successful login
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
                             Toast.makeText(LoginActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
-                            // Proceed to the next activity
                         }
                     });
                 } else {
-                    // Invalid credentials
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {

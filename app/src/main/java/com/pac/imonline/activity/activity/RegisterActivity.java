@@ -45,7 +45,7 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent goBack = new Intent(RegisterActivity.this, LoginRegisterActivity.class);
                 startActivity(goBack);
-                finish(); // Finish the current activity
+                finish();
             }
         });
     }
@@ -78,10 +78,9 @@ public class RegisterActivity extends AppCompatActivity {
                         @Override
                         public void run() {
                             Toast.makeText(RegisterActivity.this, "Registration successful", Toast.LENGTH_SHORT).show();
-                            // Proceed to the login activity
-                            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                            Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
                             startActivity(intent);
-                            finish(); // Finish the current activity
+                            finish();
                         }
                     });
                 } else {

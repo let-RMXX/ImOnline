@@ -12,8 +12,8 @@ public interface UserDao {
     @Insert
     long registerUser(User user);
 
-    @Query("SELECT * FROM users WHERE username = :username AND password = :passwordHash LIMIT 1")
-    User loginUser(String username, String passwordHash);
+    @Query("SELECT * FROM users WHERE username = :username AND password = :password LIMIT 1")
+    User loginUser(String username, String password);
 
     @Query("SELECT * FROM users")
     LiveData<List<User>> getAllUsers();
