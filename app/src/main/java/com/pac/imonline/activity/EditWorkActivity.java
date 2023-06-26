@@ -46,7 +46,6 @@ public class EditWorkActivity extends AppCompatActivity {
         WorkActivity newWork = new WorkActivity(0, compName, workDate, role, WorkDescription);
 
 
-        //TODO APP DATAABSE PARA DAR INSERT OU UPDATE????
         AppDatabase.getInstance(this).getWorkDAO().insert(newWork);
         finish();
     }

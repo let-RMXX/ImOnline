@@ -18,10 +18,10 @@ public class EditEducationActivity extends AppCompatActivity {
         context.startActivity(intent);
     }
 
-    private EditText editTextUni_name;
-    private EditText editTextDate;
-    private EditText editTextGraduation;
-    private EditText editTextDescription;
+     EditText editTextUni_name;
+     EditText editTextDate;
+     EditText editTextGraduation;
+     EditText editTextDescription;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +47,6 @@ public class EditEducationActivity extends AppCompatActivity {
         EducationActivity newEducation = new EducationActivity(0,uniName, date, graduation, description);
 
 
-        //TODO APP DATAABSE PARA DAR INSERT OU UPDATE???
         AppDatabase.getInstance(this).getEducationDAO().insert(newEducation);
         finish();
     }

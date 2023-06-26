@@ -1,6 +1,5 @@
 package com.pac.imonline.activity;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,8 +10,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.pac.imonline.R;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,10 +19,24 @@ public class EducationAdapter extends RecyclerView.Adapter<EducationAdapter.View
     private List<EducationActivity> educationActivityList;
     private EducationAdapterEventListener eventListener;
 
+    /**
+     * Construtor que um objeto que implemente o interface ContactAdapterEventListener
+     * @param eventListener
+     */
+
     public EducationAdapter(EducationAdapterEventListener eventListener) {
         this.educationActivityList = new ArrayList<>();
         this.eventListener = eventListener;
     }
+    /**
+     * Criar um novo ViewHolder sempre que for necessário
+     * @param parent The ViewGroup into which the new View will be added after it is bound to
+     *               an adapter position.
+     * @param viewType The view type of the new View.
+     *
+     * @return
+     */
+
 
     @NonNull
     @Override
@@ -36,7 +47,8 @@ public class EducationAdapter extends RecyclerView.Adapter<EducationAdapter.View
 
     @Override
     public void onBindViewHolder(@NonNull EducationAdapter.ViewHolder holder, int position) {
-        final EducationActivity educationActivity = educationActivityList.get(position);
+        final EducationActivity educationActivity = this.educationActivityList.get(position);
+
         holder.uni_name.setText(educationActivity.getUniversity_name());
         holder.date.setText(educationActivity.getDate());
         holder.graduation.setText(educationActivity.getGraduation());
@@ -61,10 +73,10 @@ public class EducationAdapter extends RecyclerView.Adapter<EducationAdapter.View
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            uni_name = itemView.findViewById(R.id.textViewUniversityName);
-            date = itemView.findViewById(R.id.textViewDate);
-            graduation = itemView.findViewById(R.id.textViewGraduation);
-            description = itemView.findViewById(R.id.textViewDescription);
+            uni_name = itemView.findViewById(R.id.textViewCompanyName);
+            date = itemView.findViewById(R.id.textViewDateWork);
+            graduation = itemView.findViewById(R.id.textViewRole);
+            description = itemView.findViewById(R.id.textViewDescriptionWork);
         }
     }
 

@@ -11,36 +11,40 @@ import android.widget.Button;
 
 import com.pac.imonline.R;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
-public class ProfileActivityMain extends AppCompatActivity implements EducationAdapter.EducationAdapterEventListener{
-        private RecyclerView recyclerViewEducation;
-        private RecyclerView recyclerViewWork;
+public class ProfileActivityMain extends AppCompatActivity implements EducationAdapter.EducationAdapterEventListener, WorkAdapter.WorkAdapterEventListener{
         private EducationAdapter educationAdapter;
+        private WorkAdapter workAdapter;
         private Button buttonEditProfile;
         private Button buttonEditEducation;
         private Button buttonEditWork;
+
+
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_profile);
-            // Referencias das RecyclerViews
-            RecyclerView recyclerViewEducation = findViewById(R.id.recyclerViewEducation);
-            RecyclerView recyclerViewWork = findViewById(R.id.recyclerViewWork);
 
+            //RecyclerViews
+            RecyclerView recyclerViewEducation = findViewById(R.id.recyclerViewEducation);
             AppDatabase db = AppDatabase.getInstance(this);
             EducationDAO educationDAO = db.getEducationDAO();
-            WorkDAO workDAO = db.getWorkDAO();
-
-            educationAdapter = new EducationAdapter(this);
-
+            this.educationAdapter = new EducationAdapter(this);
             LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-            recyclerViewEducation.setAdapter(educationAdapter);
+            recyclerViewEducation.setAdapter(this.educationAdapter);
             recyclerViewEducation.setLayoutManager(layoutManager);
 
-            List<EducationActivity> educationActivityList = new ArrayList<>();
+
+
+
+
+
+
+
+
             // Buttons / ClickListeners
             buttonEditProfile = findViewById(R.id.button_editProfile);
             buttonEditProfile.setOnClickListener(new View.OnClickListener() {
@@ -72,11 +76,19 @@ public class ProfileActivityMain extends AppCompatActivity implements EducationA
             Intent intent = new Intent(this, EditProfileActivity.class);
             startActivity(intent);
         }
+        @Override
+        protected void onStart(){
+            super.onStart();
+            List<EducationActivity> newEducationList = AppDatabase.getInstance(this).getEducationDAO().getAll();
+            this.educationAdapter.refreshList(newEducationList);
+        }
 
         public void openEditEducationActivity() {
             Intent intent = new Intent(this, EditEducationActivity.class);
             startActivity(intent);
         }
+
+
 
         public void openEditWorkActivity() {
             Intent intent = new Intent(this, EditWorkActivity.class);
