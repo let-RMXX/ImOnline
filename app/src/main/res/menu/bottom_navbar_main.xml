@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/navBarSearch"
+        android:title="Search"
+        app:showAsAction="never"
+        android:icon="@drawable/loupe_icon"
+        />
+    <item
+        android:id="@+id/navBarHome"
+        android:title="Home"
+        app:showAsAction="never"
+        android:icon="@drawable/home_icon"
+        />
+    <item
+        android:id="@+id/navBarMessages"
+        android:title="Messages"
+        app:showAsAction="never"
+        android:icon="@drawable/messages_icon"
+        />
+
+    <item
+        android:id="@+id/navBarSettings"
+        android:title="Search"
+        app:showAsAction="never"
+        android:icon="@drawable/settings_icon"
+        />
+
+</menu>
