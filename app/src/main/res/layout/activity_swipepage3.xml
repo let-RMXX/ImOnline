@@ -5,29 +5,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/teal"
-    tools:context=".activity.SwipePage2Activity">
+    tools:context=".activity.activity.SwipePage3Activity">
 
     <TextView
-        android:id="@+id/titleView3"
-        android:layout_width="370dp"
+        android:id="@+id/textView"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
-        android:text="You can connect with other professionals that have the same interests has you"
+        android:layout_marginTop="100dp"
+        android:text="We offer a variety of communities, so we can connect our users directly with large companies from all around the world "
         android:textAlignment="center"
         android:textColor="@color/darkgrey_one"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView2"
+    <TextView
+        android:id="@+id/textView2"
         android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_marginTop="80dp"
+        android:layout_height="wrap_content"
+        android:text="This makes it easy for our users to find internships, jobs and advance their careers."
+        android:textAlignment="center"
+        android:textColor="@color/darkgrey_one"
+        android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/defimgcommunities" />
-
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 </androidx.constraintlayout.widget.ConstraintLayout>

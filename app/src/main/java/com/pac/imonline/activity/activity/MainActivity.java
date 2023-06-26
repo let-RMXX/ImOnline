@@ -1,31 +1,35 @@
 package com.pac.imonline.activity.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import com.pac.imonline.R;
+import com.pac.imonline.activity.activity.DatabaseAuth;
+import com.pac.imonline.activity.activity.LoginActivity;
+import com.pac.imonline.helper.DatabaseConfig;
 
 public class MainActivity extends AppCompatActivity {
 
-    //private dataBaseAuth dataBase;
+    private DatabaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Toolbar Configuration
-        Toolbar toolbar = findViewById(R.id.principalToolbar);
+        // Toolbar Config
+        Toolbar toolbar = findViewById(R.id.toolbarMain);
         toolbar.setTitle("Im Online");
         setSupportActionBar(toolbar);
 
-        //databaseAuth = databaseConfig.getDatabaseConfig();
+        //object config
+        auth = DatabaseConfig.getDatabaseAuth();
 
     }
 
@@ -33,20 +37,19 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu){
 
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.main_menu, menu);
+        inflater.inflate(R.menu.menu_main, menu);
 
-            return super.onCreateOptionsMenu(menu);
+        return super.onCreateOptionsMenu(menu);
 
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item){
+    public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()){
 
-            case R.id.signout_menu:
-
-                userSignOut();
+            case R.id.menuSignOut:
+                signOutUser();
                 startActivity(new Intent(getApplicationContext(), LoginActivity.class));
 
                 break;
@@ -57,11 +60,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void userSignOut(){
+    private void signOutUser(){
 
         try {
 
-                //databaseAuth.signOut();
+            auth.signOut();
 
         }catch (Exception e){
 

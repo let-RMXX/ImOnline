@@ -10,4 +10,33 @@
     <color name="darkestwhite">#CADADD</color>
     <color name="blue">#00BCD4</color>
 
+    //SwipePages Dots inactive Colors
+    <color name="lightgrey_one">#80D9D9D9</color>
+    <color name="lightgrey_two">#80D9D9D9</color>
+    <color name="lightgrey_three">#80D9D9D9</color>
+
+    //SwipePages Dots active Colors
+    <color name="darkgrey_one">#D9D9D9</color>
+    <color name="darkgrey_two">#D9D9D9</color>
+    <color name="darkgrey_three">#D9D9D9</color>
+
+    //SwipePages Main Color
+    <color name="teal">#3282B8</color>
+
+    //SwipePages Dots active Colors
+    <array name="active">
+        <item>@color/darkgrey_one</item>
+        <item>@color/darkgrey_two</item>
+        <item>@color/darkgrey_three</item>
+    </array>
+
+    //SwipePages Dots inactive Colors
+    <array name="inactive">
+        <item>@color/lightgrey_one</item>
+        <item>@color/lightgrey_two</item>
+        <item>@color/lightgrey_three</item>
+    </array>
+
+
+
 </resources>
