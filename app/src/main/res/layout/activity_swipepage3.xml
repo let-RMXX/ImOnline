@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/teal"
+    android:background="@drawable/swipe_page3_background"
     tools:context=".activity.activity.SwipePage3Activity">
 
     <TextView
@@ -16,6 +16,7 @@
         android:textAlignment="center"
         android:textColor="@color/darkgrey_one"
         android:textSize="34sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -28,6 +29,7 @@
         android:textAlignment="center"
         android:textColor="@color/darkgrey_one"
         android:textSize="34sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
