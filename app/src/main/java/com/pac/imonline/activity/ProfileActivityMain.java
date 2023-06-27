@@ -71,11 +71,11 @@ public class ProfileActivityMain extends AppCompatActivity implements EducationA
             ProfileActivity profile = AppDatabase.getInstance(this).getProfileDAO().getProfile();
             //this.profileAdapter = new ProfileAdapter(this);
 
-            textViewName.setText(profile.getName());
-            textViewAbout.setText(profile.getAbout());
-            textViewPhone.setText(profile.getPhoneNumber());
-            textViewEmail.setText(profile.getEmail());
-            textViewLocation.setText(profile.getLocation());
+            //textViewName.setText(profile.getName());
+            //textViewAbout.setText(profile.getAbout());
+            //textViewPhone.setText(profile.getPhoneNumber());
+            //textViewEmail.setText(profile.getEmail());
+            //textViewLocation.setText(profile.getLocation());
 
 
 
