@@ -1,20 +1,21 @@
 package com.pac.imonline.activity.activity;
 
-import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
 
-import java.util.List;
-
 @Dao
 public interface UserDao {
+
     @Insert
-    long registerUser(User user);
+    void registerUser(UserEntity userEntity);
 
-    @Query("SELECT * FROM users WHERE username = :username AND password = :password LIMIT 1")
-    User loginUser(String username, String password);
+    @Query("SELECT * FROM users WHERE email = :email AND password = :password LIMIT 1")
+    UserEntity loginUser(String email, String password);
 
-    @Query("SELECT * FROM users")
-    LiveData<List<User>> getAllUsers();
+    @Query("SELECT * FROM users WHERE username = :username")
+    UserEntity getUserByUsername(String username);
+
+    @Query("SELECT * FROM users WHERE email = :email")
+    UserEntity getUserByEmail(String email);
 }

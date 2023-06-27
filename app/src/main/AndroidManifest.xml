@@ -29,8 +29,10 @@
        <activity
            android:name=".activity.activity.CommunityListActivity"
            android:exported="false"/>
+        <activity android:name=".activity.activity.RegisterActivity"
+            android:exported="false"/>
         <activity
-            android:name=".activity.activity.RegisterActivity"
+            android:name=".activity.activity.LoginRegisterActivity"
             android:exported="true">
 
             <intent-filter>

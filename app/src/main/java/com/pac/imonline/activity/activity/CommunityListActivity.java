@@ -33,7 +33,7 @@ public class CommunityListActivity extends AppCompatActivity {
         communityAdapter = new CommunityAdapter(communityList);
         communityRecyclerView.setAdapter(communityAdapter);
 
-        appDatabase = AppDatabase.getInstance(this);
+        //appDatabase = AppDatabase.getInstance(this);
         communityDao = appDatabase.getCommunityDao();
 
         communityDao.getAllCommunities().observe(this, new Observer<List<Community>>() {

@@ -1,9 +1,11 @@
 package com.pac.imonline.activity.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,64 +13,64 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.pac.imonline.R;
 
 public class LoginActivity extends AppCompatActivity {
-    private EditText usernameEditText;
-    private EditText passwordEditText;
-    private Button loginButton;
 
-    private UserRepository userRepository;
+    EditText enterEmailLogin, enterPasswordLogin;
+    Button signInButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        usernameEditText = findViewById(R.id.enterEmailLogin);
-        passwordEditText = findViewById(R.id.enterPasswordLogin);
-        loginButton = findViewById(R.id.signInButton);
+        enterEmailLogin = findViewById(R.id.enterEmailLogin);
+        enterPasswordLogin = findViewById(R.id.enterPasswordLogin);
+        signInButton = findViewById(R.id.signInButton);
 
-        userRepository = new UserRepository(this);
-
-        loginButton.setOnClickListener(new View.OnClickListener() {
+        ImageView backButton = findViewById(R.id.loginBackButton);
+        signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loginUser();
+                String email = enterEmailLogin.getText().toString().trim();
+                String password = enterPasswordLogin.getText().toString().trim();
+
+                if (validateInput(email, password)) {
+                    AppDatabase appDatabase = AppDatabase.getAppDatabase(getApplicationContext());
+                    final UserDao userDao = appDatabase.userDao();
+
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            UserEntity user = userDao.loginUser(email, password);
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    if (user != null) {
+                                        Toast.makeText(getApplicationContext(), "Login Successful!", Toast.LENGTH_SHORT).show();
+                                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                                        finish();
+                                    } else {
+                                        Toast.makeText(getApplicationContext(), "Invalid credentials", Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+                            });
+                        }
+                    }).start();
+
+                } else {
+                    Toast.makeText(getApplicationContext(), "Fill in all fields!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoginActivity.this, LoginRegisterActivity.class));
+                finish();
             }
         });
     }
 
-    private void loginUser() {
-        String username = usernameEditText.getText().toString().trim();
-        String password = passwordEditText.getText().toString().trim();
-
-        // Check if username or password is empty
-        if (username.isEmpty() || password.isEmpty()) {
-            Toast.makeText(this, "Username and password are required", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                User user = userRepository.loginUser(username, password);
-                if (user != null) {
-                    // Successful login
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            Toast.makeText(LoginActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
-                            // Proceed to the next activity
-                        }
-                    });
-                } else {
-                    // Invalid credentials
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            Toast.makeText(LoginActivity.this, "Invalid username or password", Toast.LENGTH_SHORT).show();
-                        }
-                    });
-                }
-            }
-        }).start();
+    private boolean validateInput(String email, String password) {
+        return !email.isEmpty() && !password.isEmpty();
     }
 }
