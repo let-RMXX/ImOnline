@@ -10,18 +10,29 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
+import com.google.android.material.textfield.TextInputEditText;
 import com.pac.imonline.R;
 
 
 import java.util.List;
 
-public class ProfileActivityMain extends AppCompatActivity implements EducationAdapter.EducationAdapterEventListener, WorkAdapter.WorkAdapterEventListener{
+public class ProfileActivityMain extends AppCompatActivity implements EducationAdapter.EducationAdapterEventListener, WorkAdapter.WorkAdapterEventListener, ProfileAdapter.ProfileAdapterEventListener{
         private EducationAdapter educationAdapter;
         private WorkAdapter workAdapter;
+        private ProfileAdapter profileAdapter;
         private Button buttonEditProfile;
         private Button buttonEditEducation;
         private Button buttonEditWork;
+
+        private TextView textViewName;
+        private TextView textViewAbout;
+        private TextView textViewPhone;
+        private TextView textViewEmail;
+        private TextView textViewLocation;
+
+
 
 
 
@@ -48,6 +59,25 @@ public class ProfileActivityMain extends AppCompatActivity implements EducationA
             LinearLayoutManager layoutManager1 = new LinearLayoutManager(this);
             recyclerViewWork.setAdapter(this.workAdapter);
             recyclerViewWork.setLayoutManager(layoutManager1);
+
+
+            //Profile
+            TextView textViewName = findViewById(R.id.textViewName);
+            TextView textViewAbout = findViewById(R.id.textViewAbout);
+            TextView textViewPhone = findViewById(R.id.textViewPhone);
+            TextView textViewEmail = findViewById(R.id.textViewEmail);
+            TextView textViewLocation = findViewById(R.id.textViewLocation);
+
+            ProfileActivity profile = AppDatabase.getInstance(this).getProfileDAO().getProfile();
+            //this.profileAdapter = new ProfileAdapter(this);
+
+            textViewName.setText(profile.getName());
+            textViewAbout.setText(profile.getAbout());
+            textViewPhone.setText(profile.getPhoneNumber());
+            textViewEmail.setText(profile.getEmail());
+            textViewLocation.setText(profile.getLocation());
+
+
 
             // Buttons / ClickListeners
             buttonEditProfile = findViewById(R.id.button_editProfile);
@@ -88,6 +118,9 @@ public class ProfileActivityMain extends AppCompatActivity implements EducationA
 
             List<WorkActivity> newWorkList = AppDatabase.getInstance(this).getWorkDAO().getAll();
             this.workAdapter.refreshListWork(newWorkList);
+
+            //List<ProfileActivity> newProfileList = AppDatabase.getInstance(this).getProfileDAO().getAll();
+            //this.profileAdapter.refreshListProfile(newProfileList);
         }
 
         public void openEditEducationActivity() {

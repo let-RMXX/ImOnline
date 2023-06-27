@@ -11,8 +11,8 @@ import java.util.List;
 @Dao
 public interface ProfileDAO {
 
-    @Query("SELECT * FROM ProfileActivity")
-    List<ProfileActivity> getAll();
+    @Query("SELECT * FROM ProfileActivity LIMIT 1")
+    ProfileActivity getProfile();
 
     @Query("SELECT * FROM profileactivity WHERE id = :profileId")
     ProfileActivity getById(long profileId);

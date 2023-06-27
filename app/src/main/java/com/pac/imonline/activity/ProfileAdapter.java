@@ -59,11 +59,11 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.ViewHold
         public TextView textViewLocation;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            textViewName = (TextView) itemView.findViewById(R.id.textViewName);
-            textViewAbout = (TextView) itemView.findViewById(R.id.textViewAbout);
-            textViewPhone = (TextView) itemView.findViewById(R.id.textViewPhone);
-            textViewEmail = (TextView) itemView.findViewById(R.id.textViewEmail);
-            textViewLocation = (TextView) itemView.findViewById(R.id.textViewLocation);
+            textViewName = itemView.findViewById(R.id.textViewName);
+            textViewAbout = itemView.findViewById(R.id.textViewAbout);
+            textViewPhone = itemView.findViewById(R.id.textViewPhone);
+            textViewEmail = itemView.findViewById(R.id.textViewEmail);
+            textViewLocation = itemView.findViewById(R.id.textViewLocation);
         }
     }
 
