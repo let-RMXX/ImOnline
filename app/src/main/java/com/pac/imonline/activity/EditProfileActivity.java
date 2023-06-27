@@ -44,7 +44,7 @@ public class EditProfileActivity extends AppCompatActivity {
         String phone = this.textInputEditTextPhone.getText().toString();
         String email = this.textInputEditTextEmail.getText().toString();
         String location = this.textInputEditTextLocation.getText().toString();
-
-        //ProfileActivity newProfile = new ProfileActivity(0,name, about, phone, "", location);
+        //TODO CORRIGIR ISTO PARA DEPOIS DEFINIR OS CAMPOS DO PERFIL NA MAIN PARA TESTAR
+        ProfileActivity newProfile = new ProfileActivity(0,name, about, phone, email, location);
     }
 }
