@@ -36,10 +36,11 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navBarMain"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
         android:background="@drawable/nav_bar_background"
         android:theme="?actionBarTheme"
         app:labelVisibilityMode="unlabeled"
-        app:menu="@menu/bottom_navbar_main"/>
+        app:menu="@menu/menu_bottom_navbar" />
 
 </LinearLayout>
