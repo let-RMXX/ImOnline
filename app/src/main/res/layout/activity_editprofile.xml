@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/profile_background" >
+    android:background="@drawable/background_app">
 
     <ImageView
         android:id="@+id/imageView3"
@@ -74,8 +74,8 @@
         android:textColorHint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:startIconDrawable="@drawable/baseline_phone_24"
-        app:layout_constraintTop_toBottomOf="@+id/textInputAbout">
+        app:layout_constraintTop_toBottomOf="@+id/textInputAbout"
+        app:startIconDrawable="@drawable/baseline_phone_24">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/textInputEditTextPhone"
@@ -85,8 +85,8 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:id="@+id/textInputEmail"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="1dp"
@@ -94,10 +94,10 @@
         android:layout_marginEnd="1dp"
         android:hint="Email"
         android:textColorHint="#FFFFFF"
-        app:startIconDrawable="@drawable/baseline_email_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputPhone">
+        app:layout_constraintTop_toBottomOf="@+id/textInputPhone"
+        app:startIconDrawable="@drawable/baseline_email_24">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/textInputEditTextEmail"

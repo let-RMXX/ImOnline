@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/profile_background_recycleviews">
+    android:background="@drawable/background_app">
 
 
     <EditText
@@ -14,9 +14,11 @@
         android:layout_marginStart="100dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="100dp"
+        android:background="@drawable/roundstyle"
+        android:backgroundTint="#FFFFFF"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="Role"
+        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextWorkDate" />
@@ -40,9 +42,11 @@
         android:layout_marginStart="100dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="100dp"
+        android:background="@drawable/roundstyle"
+        android:backgroundTint="#FFFFFF"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="Company Name"
+        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView6" />
@@ -54,9 +58,11 @@
         android:layout_marginStart="100dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="100dp"
+        android:background="@drawable/roundstyle"
+        android:backgroundTint="#FFFFFF"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="Date"
+        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextCompanyName" />
@@ -68,9 +74,11 @@
         android:layout_marginStart="100dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="100dp"
+        android:background="@drawable/roundstyle"
+        android:backgroundTint="#FFFFFF"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="Description"
+        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextRole" />
@@ -82,8 +90,9 @@
         android:layout_marginStart="100dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="100dp"
+        android:background="@drawable/roundstyle"
         android:onClick="editWork"
-        android:text="Apply"
+        android:text="Add"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextWorkDescription" />
