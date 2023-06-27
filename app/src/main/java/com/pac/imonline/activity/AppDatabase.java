@@ -8,7 +8,7 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
-@Database(entities = {EducationActivity.class, ProfileActivity.class, WorkActivity.class}, version = 4)
+@Database(entities = {EducationActivity.class, ProfileActivity.class, WorkActivity.class}, version = 5)
 
 public abstract class AppDatabase extends RoomDatabase {
     public abstract ProfileDAO getProfileDAO();
@@ -24,6 +24,7 @@ public abstract class AppDatabase extends RoomDatabase {
                         @Override
                         public void onCreate(@NonNull SupportSQLiteDatabase db) {
                             super.onCreate(db);
+                            //db.execSQL("INSERT INTO profile VALUES(1,'teste','teste','teste','teste','teste',)");
                         }
 
                     })

@@ -49,7 +49,7 @@ public class EditProfileActivity extends AppCompatActivity {
 
         ProfileActivity newProfile = new ProfileActivity(0,"", name, about, phone, email, location);
 
-        AppDatabase.getInstance(this).getProfileDAO().update(newProfile);
+        AppDatabase.getInstance(this).getProfileDAO().insert(newProfile);
         finish();
     }
 }

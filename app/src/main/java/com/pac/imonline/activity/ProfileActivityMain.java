@@ -54,11 +54,12 @@ public class ProfileActivityMain extends AppCompatActivity implements EducationA
 
             //RecyclerView Profile
            RecyclerView recyclerViewProfile = findViewById(R.id.recyclerViewProfile);
-           AppDatabase.getInstance()
-
-            ProfileActivity profile = AppDatabase.getInstance(this).getProfileDAO().getProfile();
-
-
+           AppDatabase dbprofile = AppDatabase.getInstance(this);
+           ProfileDAO profileDAO = dbprofile.getProfileDAO();
+           this.profileAdapter = new ProfileAdapter(this);
+           LinearLayoutManager layoutManager3 = new LinearLayoutManager(this);
+           recyclerViewProfile.setAdapter(this.profileAdapter);
+           recyclerViewProfile.setLayoutManager(layoutManager3);
 
 
             // Buttons / ClickListeners
@@ -101,8 +102,8 @@ public class ProfileActivityMain extends AppCompatActivity implements EducationA
             List<WorkActivity> newWorkList = AppDatabase.getInstance(this).getWorkDAO().getAll();
             this.workAdapter.refreshListWork(newWorkList);
 
-            //List<ProfileActivity> newProfileList = AppDatabase.getInstance(this).getProfileDAO().getAll();
-            //this.profileAdapter.refreshListProfile(newProfileList);
+            List<ProfileActivity> newProfileList = AppDatabase.getInstance(this).getProfileDAO().getAll();
+            this.profileAdapter.refreshListProfile(newProfileList);
         }
 
         public void openEditEducationActivity() {
