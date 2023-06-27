@@ -3,31 +3,26 @@ package com.pac.imonline.activity.activity;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-import androidx.room.Entity;
-import androidx.room.PrimaryKey;
-
 @Entity(tableName = "communities")
 public class Community {
 
     @PrimaryKey(autoGenerate = true)
-    private int id;
-    private String name;
-    private String photoUrl;
-    private String bannerUrl;
-    private boolean isOwner;
+    Integer id;
+    String name;
+    String photoUrl;
+    String bannerUrl;
 
-    public Community(String name, String photoUrl, String bannerUrl, boolean isOwner) {
+    public Community(String name, String photoUrl, String bannerUrl) {
         this.name = name;
         this.photoUrl = photoUrl;
         this.bannerUrl = bannerUrl;
-        this.isOwner = isOwner;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -41,9 +36,5 @@ public class Community {
 
     public String getBannerUrl() {
         return bannerUrl;
-    }
-
-    public boolean isOwner() {
-        return isOwner;
     }
 }

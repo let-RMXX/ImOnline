@@ -58,12 +58,19 @@ public class CreateCommunityActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String communityName = communityNameEditText.getText().toString().trim();
-                // Perform further actions with the community data (e.g., save to database)
+                String photoUrl = selectedPhotoUri != null ? selectedPhotoUri.toString() : null;
+                String bannerUrl = selectedBannerUri != null ? selectedBannerUri.toString() : null;
 
-                // Launch the MainActivity or any other desired activity
+                Community community = new Community(communityName, photoUrl, bannerUrl);
+
+                // Save the community to the database
+                AppDatabase appDatabase = AppDatabase.getAppDatabase(CreateCommunityActivity.this);
+                CommunityDao communityDao = appDatabase.getCommunityDao();
+                communityDao.insertCommunity(community);
+
                 Intent intent = new Intent(CreateCommunityActivity.this, CommunityListActivity.class);
                 startActivity(intent);
-                finish(); // Finish the activity
+                finish();
             }
         });
     }

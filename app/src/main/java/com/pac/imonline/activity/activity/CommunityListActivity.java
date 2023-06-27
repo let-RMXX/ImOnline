@@ -33,7 +33,7 @@ public class CommunityListActivity extends AppCompatActivity {
         communityAdapter = new CommunityAdapter(communityList);
         communityRecyclerView.setAdapter(communityAdapter);
 
-        //appDatabase = AppDatabase.getInstance(this);
+        appDatabase = AppDatabase.getAppDatabase(this);
         communityDao = appDatabase.getCommunityDao();
 
         communityDao.getAllCommunities().observe(this, new Observer<List<Community>>() {
@@ -43,7 +43,7 @@ public class CommunityListActivity extends AppCompatActivity {
                 communityList.addAll(community);
 
                 // Add a test item to the communityList
-                Community testCommunity = new Community("Test Community", "https://i.pinimg.com/originals/f1/e6/64/f1e664fd61bb3e9d53f528b97d1d34fb.jpg", "https://hdqwalls.com/wallpapers/dark-souls-3-8k-om.jpg", false);
+                Community testCommunity = new Community("Dark Souls", "https://i.pinimg.com/originals/f1/e6/64/f1e664fd61bb3e9d53f528b97d1d34fb.jpg", "https://hdqwalls.com/wallpapers/dark-souls-3-8k-om.jpg");
                 communityList.add(testCommunity);
 
                 communityAdapter.notifyDataSetChanged();
@@ -56,4 +56,3 @@ public class CommunityListActivity extends AppCompatActivity {
         startActivity(intent);
     }
 }
-

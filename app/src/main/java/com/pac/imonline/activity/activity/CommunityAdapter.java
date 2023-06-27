@@ -10,11 +10,11 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.pac.imonline.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
-
 
 public class CommunityAdapter extends RecyclerView.Adapter<CommunityAdapter.CommunityViewHolder> {
 
@@ -34,7 +34,6 @@ public class CommunityAdapter extends RecyclerView.Adapter<CommunityAdapter.Comm
     @Override
     public void onBindViewHolder(@NonNull CommunityViewHolder holder, int position) {
         Community community = communityList.get(position);
-
         holder.bind(community);
     }
 
@@ -48,41 +47,38 @@ public class CommunityAdapter extends RecyclerView.Adapter<CommunityAdapter.Comm
         private ImageView photoImageView;
         private ImageView bannerImageView;
         private TextView nameTextView;
-        private ImageView ownerBadge;
 
         public CommunityViewHolder(@NonNull View itemView) {
             super(itemView);
-
             photoImageView = itemView.findViewById(R.id.photoImageView);
             bannerImageView = itemView.findViewById(R.id.bannerImageView);
             nameTextView = itemView.findViewById(R.id.nameTextView);
-            ownerBadge = itemView.findViewById(R.id.ownerBadge);
         }
 
         public void bind(Community community) {
+            nameTextView.setText(community.getName());
 
-            if (community != null) {
-                // Add null check for photoUrl
-                if (community.getPhotoUrl() != null) {
-                    // Load the community photo using the photoUrl
-                    Glide.with(itemView.getContext())
-                            .load(community.getPhotoUrl())
-                            .into(photoImageView);
-                }
+            // Load photo image using Glide library
+            if (community.getPhotoUrl() != null) {
+                Glide.with(itemView.getContext())
+                        .load(community.getPhotoUrl())
+                        .apply(new RequestOptions().override(500, 500)) // Adjust the dimensions as needed
+                        .into(photoImageView);
+            } else {
+                // Set a default image if the photo URL is null
+                photoImageView.setImageResource(R.drawable.defimgcommunities);
+            }
 
-                nameTextView.setText(community.getName());
-
-                // Load the images using an image loading library (e.g., Picasso or Glide)
-                Picasso.get().load(community.getPhotoUrl()).into(photoImageView);
-                Picasso.get().load(community.getBannerUrl()).into(bannerImageView);
-
-                nameTextView.setText(community.getName());
-
-                if (community.isOwner()) {
-                    ownerBadge.setVisibility(View.VISIBLE);
-                } else {
-                    ownerBadge.setVisibility(View.GONE);
-                }
+            // Load banner image using Picasso library
+            if (community.getBannerUrl() != null) {
+                Picasso.get()
+                        .load(community.getBannerUrl())
+                        .resize(800, 300) // Adjust the dimensions as needed
+                        .centerCrop()
+                        .into(bannerImageView);
+            } else {
+                // Set a default image if the banner URL is null
+                bannerImageView.setImageResource(R.drawable.bannerdefimg);
             }
         }
     }
