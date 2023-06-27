@@ -51,7 +51,7 @@
         app:layout_constraintTop_toBottomOf="@+id/signUpText" />
 
     <Button
-        android:id="@+id/SignUpButton"
+        android:id="@+id/signUpButton"
         android:layout_width="280dp"
         android:layout_height="62dp"
         android:layout_marginTop="8dp"
@@ -78,7 +78,7 @@
         app:layout_constraintBottom_toTopOf="@+id/signUpGoogle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/SignUpButton" />
+        app:layout_constraintTop_toBottomOf="@+id/signUpButton" />
 
     <TextView
         android:id="@+id/WelcomeTextView"
@@ -137,7 +137,7 @@
         android:inputType="textPersonName"
         android:textAlignment="center"
         android:textColorHint="#80000000"
-        app:layout_constraintBottom_toTopOf="@+id/SignUpButton"
+        app:layout_constraintBottom_toTopOf="@+id/signUpButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/enterEmailRegister" />

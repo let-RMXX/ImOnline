@@ -6,23 +6,25 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-@Database(entities = {Community.class, User.class}, version = 3)
+@Database(entities = {Community.class, UserEntity.class}, version = 1)
 public abstract class AppDatabase extends RoomDatabase {
 
-    private static final String DATABASE_NAME = "ImOnlineDB";
-    private static AppDatabase instance;
+    private static final String dbName = "imonlinedb";
+    private static AppDatabase appDatabase;
 
-    public abstract CommunityDao getCommunityDao();
-
-    public abstract UserDao getUserDao();
-
-    public static synchronized AppDatabase getInstance(Context context) {
-        if (instance == null) {
-            instance = Room.databaseBuilder(context.getApplicationContext(),
-                            AppDatabase.class, DATABASE_NAME)
+    public static synchronized  AppDatabase getAppDatabase(Context context){
+        if (appDatabase == null) {
+            appDatabase = Room.databaseBuilder(context, AppDatabase.class, dbName)
                     .fallbackToDestructiveMigration()
                     .build();
         }
-        return instance;
+        return appDatabase;
     }
+
+    public abstract UserDao userDao();
+
+    public abstract CommunityDao getCommunityDao();
+
+
 }
+
