@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -15,6 +16,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CommunityListActivity extends AppCompatActivity {
+
+    private static final int REQUEST_CREATE_COMMUNITY = 1;
+    private static final int RESULT_COMMUNITY_CREATED = 3;
 
     private RecyclerView communityRecyclerView;
     private CommunityAdapter communityAdapter;
@@ -33,19 +37,14 @@ public class CommunityListActivity extends AppCompatActivity {
         communityAdapter = new CommunityAdapter(communityList);
         communityRecyclerView.setAdapter(communityAdapter);
 
-        //appDatabase = AppDatabase.getInstance(this);
+        appDatabase = AppDatabase.getAppDatabase(this);
         communityDao = appDatabase.getCommunityDao();
 
         communityDao.getAllCommunities().observe(this, new Observer<List<Community>>() {
             @Override
-            public void onChanged(List<Community> community) {
+            public void onChanged(List<Community> communities) {
                 communityList.clear();
-                communityList.addAll(community);
-
-                // Add a test item to the communityList
-                Community testCommunity = new Community("Test Community", "https://i.pinimg.com/originals/f1/e6/64/f1e664fd61bb3e9d53f528b97d1d34fb.jpg", "https://hdqwalls.com/wallpapers/dark-souls-3-8k-om.jpg", false);
-                communityList.add(testCommunity);
-
+                communityList.addAll(communities);
                 communityAdapter.notifyDataSetChanged();
             }
         });
@@ -53,7 +52,19 @@ public class CommunityListActivity extends AppCompatActivity {
 
     public void onCreateCommunityClicked(View view) {
         Intent intent = new Intent(this, CreateCommunityActivity.class);
-        startActivity(intent);
+        startActivityForResult(intent, REQUEST_CREATE_COMMUNITY);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == REQUEST_CREATE_COMMUNITY && resultCode == RESULT_COMMUNITY_CREATED && data != null) {
+            Community community = data.getParcelableExtra("community");
+            if (community != null) {
+                communityList.add(community);
+                communityAdapter.notifyItemInserted(communityList.size() - 1);
+            }
+        }
     }
 }
-

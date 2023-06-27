@@ -1,10 +1,5 @@
 package com.pac.imonline.activity.activity;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.PagerAdapter;
-import androidx.viewpager.widget.ViewPager;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,6 +9,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 import com.pac.imonline.R;
 
@@ -149,7 +149,7 @@ public class SwipePagesAnimation extends AppCompatActivity {
 
     private void launchHomeScreen() {
         introPref.setIsFirstTimeLaunch(false);
-        startActivity(new Intent(SwipePagesAnimation.this, LoginActivity.class));
+        startActivity(new Intent(SwipePagesAnimation.this, MainActivity.class));
         finish();
     }
 }

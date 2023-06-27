@@ -1,33 +1,54 @@
 package com.pac.imonline.activity.activity;
 
-import androidx.room.Entity;
-import androidx.room.PrimaryKey;
+import android.os.Parcel;
+import android.os.Parcelable;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "communities")
-public class Community {
+public class Community implements Parcelable {
 
     @PrimaryKey(autoGenerate = true)
-    private int id;
+    private Integer id;
     private String name;
     private String photoUrl;
     private String bannerUrl;
-    private boolean isOwner;
 
-    public Community(String name, String photoUrl, String bannerUrl, boolean isOwner) {
+    public Community(String name, String photoUrl, String bannerUrl) {
         this.name = name;
         this.photoUrl = photoUrl;
         this.bannerUrl = bannerUrl;
-        this.isOwner = isOwner;
     }
 
-    public int getId() {
+    protected Community(Parcel in) {
+        if (in.readByte() == 0) {
+            id = null;
+        } else {
+            id = in.readInt();
+        }
+        name = in.readString();
+        photoUrl = in.readString();
+        bannerUrl = in.readString();
+    }
+
+    public static final Creator<Community> CREATOR = new Creator<Community>() {
+        @Override
+        public Community createFromParcel(Parcel in) {
+            return new Community(in);
+        }
+
+        @Override
+        public Community[] newArray(int size) {
+            return new Community[size];
+        }
+    };
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -43,7 +64,21 @@ public class Community {
         return bannerUrl;
     }
 
-    public boolean isOwner() {
-        return isOwner;
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        if (id == null) {
+            dest.writeByte((byte) 0);
+        } else {
+            dest.writeByte((byte) 1);
+            dest.writeInt(id);
+        }
+        dest.writeString(name);
+        dest.writeString(photoUrl);
+        dest.writeString(bannerUrl);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
     }
 }

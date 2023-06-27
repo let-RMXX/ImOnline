@@ -14,4 +14,7 @@ public interface CommunityDao {
 
     @Query("SELECT * FROM communities")
     LiveData<List<Community>> getAllCommunities();
+
+    @Query("DELETE FROM communities")
+    void deleteAllCommunities();
 }

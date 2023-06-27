@@ -46,7 +46,7 @@ public class LoginActivity extends AppCompatActivity {
                                 public void run() {
                                     if (user != null) {
                                         Toast.makeText(getApplicationContext(), "Login Successful!", Toast.LENGTH_SHORT).show();
-                                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                                        startActivity(new Intent(LoginActivity.this, SwipePagesAnimation.class));
                                         finish();
                                     } else {
                                         Toast.makeText(getApplicationContext(), "Invalid credentials", Toast.LENGTH_SHORT).show();
