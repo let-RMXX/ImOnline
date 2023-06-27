@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputEditText;
@@ -18,11 +19,11 @@ public class EditProfileActivity extends AppCompatActivity {
         context.startActivity(intent);
     }
 
-    TextInputEditText textInputEditTextName;
-    TextInputEditText textInputEditTextAbout;
-    TextInputEditText textInputEditTextPhone;
-    TextInputEditText textInputEditTextEmail;
-    TextInputEditText textInputEditTextLocation;
+    EditText editTextName;
+    EditText editTextAbout;
+    EditText editTextPhone;
+    EditText editTextEmail;
+    EditText editTextLocation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,47 +33,23 @@ public class EditProfileActivity extends AppCompatActivity {
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
 
-        this.textInputEditTextName = findViewById(R.id.textInputEditTextName);
-        this.textInputEditTextAbout = findViewById(R.id.textInputEditTextAbout);
-        this.textInputEditTextPhone = findViewById(R.id.textInputEditTextPhone);
-        this.textInputEditTextEmail = findViewById(R.id.textInputEditTextEmail);
-        this.textInputEditTextLocation = findViewById(R.id.textInputEditTextLocation);
+        this.editTextName = findViewById(R.id.editTextName);
+        this.editTextAbout = findViewById(R.id.editTextAbout);
+        this.editTextPhone = findViewById(R.id.editTextPhone);
+        this.editTextEmail = findViewById(R.id.editTextEmail);
+        this.editTextLocation = findViewById(R.id.editTextLocation);
     }
 
     public void editProfile(View view){
-        String name = this.textInputEditTextName.getText().toString();
-        String about = this.textInputEditTextAbout.getText().toString();
-        String phone = this.textInputEditTextPhone.getText().toString();
-        String email = this.textInputEditTextEmail.getText().toString();
-        String location = this.textInputEditTextLocation.getText().toString();
-        //TODO CORRIGIR ISTO PARA DEPOIS DEFINIR OS CAMPOS DO PERFIL NA MAIN PARA TESTAR
-        ProfileActivity newProfile = new ProfileActivity(0, "", name, about, phone, email, location);
+        String name = this.editTextName.getText().toString();
+        String about = this.editTextAbout.getText().toString();
+        String phone = this.editTextPhone.getText().toString();
+        String email = this.editTextEmail.getText().toString();
+        String location = this.editTextLocation.getText().toString();
 
-        TextView textViewName = findViewById(R.id.textViewName);
-        TextView textViewAbout = findViewById(R.id.textViewAbout);
-        TextView textViewPhone = findViewById(R.id.textViewPhone);
-        TextView textViewEmail = findViewById(R.id.textViewEmail);
-        TextView textViewLocation = findViewById(R.id.textViewLocation);
+        ProfileActivity newProfile = new ProfileActivity(0,"", name, about, phone, email, location);
 
-        textViewName.setText(newProfile.getName());
-        textViewAbout.setText(newProfile.getAbout());
-        textViewPhone.setText(newProfile.getPhoneNumber());
-        textViewEmail.setText(newProfile.getEmail());
-        textViewLocation.setText(newProfile.getLocation());
-
-        AppDatabase.getInstance(this).getProfileDAO().insert(newProfile);
+        AppDatabase.getInstance(this).getProfileDAO().update(newProfile);
         finish();
-
-        //TextView textViewName = findViewById(R.id.textViewName);
-        //TextView textViewAbout = findViewById(R.id.textViewAbout);
-        //TextView textViewPhone = findViewById(R.id.textViewPhone);
-        //TextView textViewEmail = findViewById(R.id.textViewEmail);
-        //TextView textViewLocation = findViewById(R.id.textViewLocation);
-
-        //extViewName.setText(name);
-        //textViewAbout.setText(about);
-        //textViewPhone.setText(phone);
-        //textViewEmail.setText(email);
-        //textViewLocation.setText(location);
     }
 }

@@ -26,15 +26,6 @@ public class ProfileActivityMain extends AppCompatActivity implements EducationA
         private Button buttonEditEducation;
         private Button buttonEditWork;
 
-        private TextView textViewName;
-        private TextView textViewAbout;
-        private TextView textViewPhone;
-        private TextView textViewEmail;
-        private TextView textViewLocation;
-
-
-
-
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -61,21 +52,12 @@ public class ProfileActivityMain extends AppCompatActivity implements EducationA
             recyclerViewWork.setLayoutManager(layoutManager1);
 
 
-            //Profile
-            TextView textViewName = findViewById(R.id.textViewName);
-            TextView textViewAbout = findViewById(R.id.textViewAbout);
-            TextView textViewPhone = findViewById(R.id.textViewPhone);
-            TextView textViewEmail = findViewById(R.id.textViewEmail);
-            TextView textViewLocation = findViewById(R.id.textViewLocation);
+            //RecyclerView Profile
+           RecyclerView recyclerViewProfile = findViewById(R.id.recyclerViewProfile);
+           AppDatabase.getInstance()
 
             ProfileActivity profile = AppDatabase.getInstance(this).getProfileDAO().getProfile();
-            //this.profileAdapter = new ProfileAdapter(this);
 
-            //textViewName.setText(profile.getName());
-            //textViewAbout.setText(profile.getAbout());
-            //textViewPhone.setText(profile.getPhoneNumber());
-            //textViewEmail.setText(profile.getEmail());
-            //textViewLocation.setText(profile.getLocation());
 
 
 
