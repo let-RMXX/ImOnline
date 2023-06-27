@@ -24,7 +24,7 @@ public interface ProfileDAO {
     void insert (List<ProfileActivity> profileActivityList);
 
     @Update
-    void update(ProfileActivity profileActivity);
+    void updateProfile(ProfileActivity profileActivity);
 
     @Delete
     void delete(ProfileActivity profileActivity);

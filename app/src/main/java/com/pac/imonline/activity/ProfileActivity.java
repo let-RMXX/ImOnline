@@ -43,5 +43,13 @@ public class ProfileActivity {
     public String getLocation() {
         return location;
     }
+
+    public void updateProfile(String name, String about, String phoneNumber, String email, String location) {
+        this.name = name;
+        this.about = about;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.location = location;
+    }
 }
 

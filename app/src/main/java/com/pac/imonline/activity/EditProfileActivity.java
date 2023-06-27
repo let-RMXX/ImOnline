@@ -50,9 +50,22 @@ public class EditProfileActivity extends AppCompatActivity {
         String email = this.editTextEmail.getText().toString();
         String location = this.editTextLocation.getText().toString();
 
-        ProfileActivity newProfile = new ProfileActivity(0,"", name, about, phone, email, location);
+        int profileId=1;
 
-        AppDatabase.getInstance(this).getProfileDAO().insert(newProfile);
-        finish();
+        ProfileActivity currentProfile = AppDatabase.getInstance(this).getProfileDAO().getById(profileId);
+
+        if ((currentProfile != null)){
+            currentProfile.updateProfile(name, about, phone, email, location);
+
+            AppDatabase.getInstance(this).getProfileDAO().updateProfile(currentProfile);
+            finish();
+        } else {
+            AppDatabase.getInstance(this).getProfileDAO().getById(profileId);
+        }
+
+        //ProfileActivity newProfile = new ProfileActivity(0,"", name, about, phone, email, location);
+
+        //AppDatabase.getInstance(this).getProfileDAO().updateProfile(newProfile);
+        //finish();
     }
 }
