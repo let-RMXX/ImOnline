@@ -27,12 +27,12 @@
             android:name=".activity.activity.SwipePagesAnimation"
             android:exported="false"/>
        <activity
-           android:name=".activity.activity.LoginRegisterActivity"
+           android:name=".activity.activity.CommunityListActivity"
            android:exported="false"/>
         <activity android:name=".activity.activity.RegisterActivity"
             android:exported="false"/>
         <activity
-            android:name=".activity.activity.CommunityListActivity"
+            android:name=".activity.activity.LoginRegisterActivity"
             android:exported="true">
 
             <intent-filter>
