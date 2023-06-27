@@ -63,9 +63,5 @@ public class EditProfileActivity extends AppCompatActivity {
             AppDatabase.getInstance(this).getProfileDAO().getById(profileId);
         }
 
-        //ProfileActivity newProfile = new ProfileActivity(0,"", name, about, phone, email, location);
-
-        //AppDatabase.getInstance(this).getProfileDAO().updateProfile(newProfile);
-        //finish();
     }
 }

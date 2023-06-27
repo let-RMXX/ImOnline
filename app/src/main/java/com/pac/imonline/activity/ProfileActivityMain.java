@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.pac.imonline.R;
 
@@ -60,6 +61,22 @@ public class ProfileActivityMain extends AppCompatActivity implements EducationA
            LinearLayoutManager layoutManager3 = new LinearLayoutManager(this);
            recyclerViewProfile.setAdapter(this.profileAdapter);
            recyclerViewProfile.setLayoutManager(layoutManager3);
+
+           //CÓDIGO DA BOTTOM NAV BAR
+            BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+            bottomNavigationView.setOnItemSelectedListener(item -> {
+                switch (item.getItemId()){
+                    case R.id.bottom_profile:
+                        return true;
+                    case R.id.bottom_home:
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        overridePendingTransition(R.anim.slide_right, R.anim.slide_out_left);
+                        finish();
+                        return true;
+                }
+
+                return false;
+            });
 
 
             // Buttons / ClickListeners
@@ -178,5 +195,7 @@ public class ProfileActivityMain extends AppCompatActivity implements EducationA
             dialog.show();
 
     }
+
+
 }
 
