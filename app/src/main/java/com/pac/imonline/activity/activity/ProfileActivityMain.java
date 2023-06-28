@@ -15,16 +15,16 @@ import android.widget.TextView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.pac.imonline.R;
-import com.pac.imonline.activity.EditEducationActivity;
-import com.pac.imonline.activity.EducationActivity;
-import com.pac.imonline.activity.EducationAdapter;
-import com.pac.imonline.activity.EducationDAO;
-import com.pac.imonline.activity.ProfileActivity;
-import com.pac.imonline.activity.ProfileAdapter;
-import com.pac.imonline.activity.ProfileDAO;
-import com.pac.imonline.activity.WorkActivity;
-import com.pac.imonline.activity.WorkAdapter;
-import com.pac.imonline.activity.WorkDAO;
+import com.pac.imonline.activity.activity.EditEducationActivity;
+import com.pac.imonline.activity.activity.EducationActivity;
+import com.pac.imonline.activity.activity.EducationAdapter;
+import com.pac.imonline.activity.activity.EducationDAO;
+import com.pac.imonline.activity.activity.ProfileActivity;
+import com.pac.imonline.activity.activity.ProfileAdapter;
+import com.pac.imonline.activity.activity.ProfileDAO;
+import com.pac.imonline.activity.activity.WorkActivity;
+import com.pac.imonline.activity.activity.WorkAdapter;
+import com.pac.imonline.activity.activity.WorkDAO;
 
 
 import java.util.List;
@@ -75,11 +75,17 @@ public class ProfileActivityMain extends AppCompatActivity implements EducationA
            //CÓDIGO DA BOTTOM NAV BAR
             BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
             bottomNavigationView.setOnItemSelectedListener(item -> {
+
                 switch (item.getItemId()){
-                    case R.id.bottom_profile:
-                        return true;
-                    case R.id.bottom_home:
+
+                    case R.id.botton_home:
                         startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        overridePendingTransition(R.anim.slide_right, R.anim.slide_out_left);
+                        finish();
+                        return true;
+
+                    case R.id.botton_communities:
+                        startActivity(new Intent(getApplicationContext(), CommunityListActivity.class));
                         overridePendingTransition(R.anim.slide_right, R.anim.slide_out_left);
                         finish();
                         return true;

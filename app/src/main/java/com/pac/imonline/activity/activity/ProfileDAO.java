@@ -1,10 +1,12 @@
-package com.pac.imonline.activity;
+package com.pac.imonline.activity.activity;
 
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
+
+import com.pac.imonline.activity.activity.ProfileActivity;
 
 import java.util.List;
 

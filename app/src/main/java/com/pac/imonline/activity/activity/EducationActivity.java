@@ -1,4 +1,4 @@
-package com.pac.imonline.activity;
+package com.pac.imonline.activity.activity;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;

@@ -1,4 +1,4 @@
-package com.pac.imonline.activity;
+package com.pac.imonline.activity.activity;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.pac.imonline.R;
+import com.pac.imonline.activity.activity.ProfileActivity;
 
 import java.util.ArrayList;
 import java.util.List;

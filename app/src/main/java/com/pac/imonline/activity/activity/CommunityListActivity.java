@@ -10,10 +10,13 @@ import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.pac.imonline.R;
 
 import java.util.ArrayList;
 import java.util.List;
+
+
 
 public class CommunityListActivity extends AppCompatActivity {
 
@@ -30,6 +33,22 @@ public class CommunityListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_community_list);
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setOnItemSelectedListener(item -> {
+
+            switch (item.getItemId()){
+
+                case R.id.botton_home:
+                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                    overridePendingTransition(R.anim.slide_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
+
+            }
+
+            return false;
+        });
 
         communityRecyclerView = findViewById(R.id.communityRecyclerView);
         communityRecyclerView.setLayoutManager(new LinearLayoutManager(this));

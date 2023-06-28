@@ -27,7 +27,7 @@
             android:id="@+id/imageView6"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            app:srcCompat="@drawable/menu_icon" />
+            app:srcCompat="@drawable/baseline_menu_24" />
 
 
     </androidx.appcompat.widget.Toolbar>
