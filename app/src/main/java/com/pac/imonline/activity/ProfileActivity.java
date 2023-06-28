@@ -44,12 +44,15 @@ public class ProfileActivity {
         return location;
     }
 
-    public void updateProfile(String name, String about, String phoneNumber, String email, String location) {
+    public void updateProfile(String name, String about, String phoneNumber, String email, String location, String avatar) {
         this.name = name;
         this.about = about;
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.location = location;
+        this.avatar = avatar;
+
     }
+
 }
 
