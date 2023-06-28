@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.pac.imonline.R;
+import com.pac.imonline.activity.activity.AppDatabase;
 
 public class EditEducationActivity extends AppCompatActivity {
 
@@ -44,7 +45,7 @@ public class EditEducationActivity extends AppCompatActivity {
         String graduation = this.editTextGraduation.getText().toString();
         String description = this.editTextDescription.getText().toString();
 
-        EducationActivity newEducation = new EducationActivity(0,uniName, date, graduation, description);
+        com.pac.imonline.activity.EducationActivity newEducation = new com.pac.imonline.activity.EducationActivity(0,uniName, date, graduation, description);
 
 
         AppDatabase.getInstance(this).getEducationDAO().insert(newEducation);

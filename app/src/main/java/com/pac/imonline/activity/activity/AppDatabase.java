@@ -2,9 +2,19 @@ package com.pac.imonline.activity.activity;
 
 import android.content.Context;
 
+
+import androidx.annotation.NonNull;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
+import androidx.sqlite.db.SupportSQLiteDatabase;
+
+import com.pac.imonline.activity.EducationActivity;
+import com.pac.imonline.activity.EducationDAO;
+import com.pac.imonline.activity.ProfileActivity;
+import com.pac.imonline.activity.ProfileDAO;
+import com.pac.imonline.activity.WorkActivity;
+import com.pac.imonline.activity.WorkDAO;
 
 @Database(entities = {Community.class, UserEntity.class, EducationActivity.class, ProfileActivity.class, WorkActivity.class}, version = 2, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {

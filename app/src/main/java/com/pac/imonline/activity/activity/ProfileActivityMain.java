@@ -1,4 +1,4 @@
-package com.pac.imonline.activity;
+package com.pac.imonline.activity.activity;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +15,16 @@ import android.widget.TextView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.pac.imonline.R;
+import com.pac.imonline.activity.EditEducationActivity;
+import com.pac.imonline.activity.EducationActivity;
+import com.pac.imonline.activity.EducationAdapter;
+import com.pac.imonline.activity.EducationDAO;
+import com.pac.imonline.activity.ProfileActivity;
+import com.pac.imonline.activity.ProfileAdapter;
+import com.pac.imonline.activity.ProfileDAO;
+import com.pac.imonline.activity.WorkActivity;
+import com.pac.imonline.activity.WorkAdapter;
+import com.pac.imonline.activity.WorkDAO;
 
 
 import java.util.List;

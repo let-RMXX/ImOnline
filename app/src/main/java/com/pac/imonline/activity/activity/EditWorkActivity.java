@@ -1,4 +1,4 @@
-package com.pac.imonline.activity;
+package com.pac.imonline.activity.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,6 +9,8 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.pac.imonline.R;
+import com.pac.imonline.activity.WorkActivity;
+import com.pac.imonline.activity.activity.AppDatabase;
 
 public class EditWorkActivity extends AppCompatActivity {
 
