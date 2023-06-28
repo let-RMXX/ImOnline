@@ -1,4 +1,4 @@
-package com.pac.imonline.activity;
+package com.pac.imonline.activity.activity;
 
 import androidx.room.Dao;
 import androidx.room.Delete;

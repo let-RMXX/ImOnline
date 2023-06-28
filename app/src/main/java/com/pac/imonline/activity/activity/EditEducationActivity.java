@@ -1,4 +1,4 @@
-package com.pac.imonline.activity;
+package com.pac.imonline.activity.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -45,7 +45,7 @@ public class EditEducationActivity extends AppCompatActivity {
         String graduation = this.editTextGraduation.getText().toString();
         String description = this.editTextDescription.getText().toString();
 
-        com.pac.imonline.activity.EducationActivity newEducation = new com.pac.imonline.activity.EducationActivity(0,uniName, date, graduation, description);
+        com.pac.imonline.activity.activity.EducationActivity newEducation = new com.pac.imonline.activity.activity.EducationActivity(0,uniName, date, graduation, description);
 
 
         AppDatabase.getInstance(this).getEducationDAO().insert(newEducation);

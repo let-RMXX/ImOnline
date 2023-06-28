@@ -9,7 +9,7 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.pac.imonline.R;
-import com.pac.imonline.activity.WorkActivity;
+import com.pac.imonline.activity.activity.WorkActivity;
 import com.pac.imonline.activity.activity.AppDatabase;
 
 public class EditWorkActivity extends AppCompatActivity {

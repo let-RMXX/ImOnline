@@ -14,7 +14,7 @@
         android:theme="@style/Theme.ImOnline"
         tools:targetApi="31">
         <activity
-            android:name=".activity.EditEducationActivity"
+            android:name=".activity.activity.EditEducationActivity"
             android:exported="false" />
         <activity
             android:name=".activity.activity.LoginActivity"
@@ -23,13 +23,13 @@
             android:name=".activity.activity.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.ProfileActivityMain"
+            android:name=".activity.activity.ProfileActivityMain"
             android:exported="true" />
         <activity
-            android:name=".activity.EditProfileActivity"
+            android:name=".activity.activity.EditProfileActivity"
             android:exported="true"/>
         <activity
-            android:name=".activity.EditWorkActivity"
+            android:name=".activity.activity.EditWorkActivity"
             android:exported="false"/>
         <activity
             android:name=".activity.activity.CreateCommunityActivity"

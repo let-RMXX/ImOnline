@@ -14,7 +14,7 @@ import android.widget.TextView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.pac.imonline.R;
-import com.pac.imonline.activity.ProfileActivity;
+import com.pac.imonline.activity.activity.ProfileActivity;
 
 import java.util.List;
 
