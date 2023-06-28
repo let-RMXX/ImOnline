@@ -4,7 +4,6 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
-
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -15,11 +14,23 @@
         android:theme="@style/Theme.ImOnline"
         tools:targetApi="31">
         <activity
+            android:name=".activity.EditEducationActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.activity.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.activity.RegisterActivity"
+            android:name=".activity.activity.MainActivity"
             android:exported="false" />
+        <activity
+            android:name=".activity.ProfileActivityMain"
+            android:exported="true" />
+        <activity
+            android:name=".activity.EditProfileActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".activity.EditWorkActivity"
+            android:exported="false"/>
         <activity
             android:name=".activity.activity.CreateCommunityActivity"
             android:exported="false"/>
@@ -29,16 +40,16 @@
        <activity
            android:name=".activity.activity.CommunityListActivity"
            android:exported="false"/>
+        <activity android:name=".activity.activity.RegisterActivity"
+            android:exported="false"/>
         <activity
-            android:name=".activity.activity.MainActivity"
+            android:name=".activity.activity.LoginRegisterActivity"
             android:exported="true">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
-
 </manifest>

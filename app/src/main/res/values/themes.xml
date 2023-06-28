@@ -3,14 +3,22 @@
     <style name="Theme.ImOnline" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/dark_blue</item>
-        <item name="colorPrimaryVariant">@color/darkest_blue</item>
+        <item name="colorPrimaryVariant">@color/dark_blue</item>
         <item name="colorOnPrimary">@color/white</item>
+
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/light_blue</item>
         <item name="colorSecondaryVariant">@color/blue</item>
         <item name="colorOnSecondary">@color/black</item>
+
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+
         <!-- Customize your theme here. -->
+
     </style>
+        <style name="SlideActivityAnimation" parent="@android:style/Animation.Activity">
+            <item name="android:activityOpenEnterAnimation">@anim/slide_right</item>
+            <item name="android:activityOpenExitAnimation">@anim/slide_out_left</item>
+        </style>
 </resources>

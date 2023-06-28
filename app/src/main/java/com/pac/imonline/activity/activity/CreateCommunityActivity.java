@@ -2,12 +2,14 @@ package com.pac.imonline.activity.activity;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +19,8 @@ import com.pac.imonline.R;
 public class CreateCommunityActivity extends AppCompatActivity {
 
     private static final int REQUEST_SELECT_GALLERY = 2;
+    private static final int REQUEST_SELECT_BANNER = 3;
+    private static final int RESULT_COMMUNITY_CREATED = 3;
 
     private EditText communityNameEditText;
     private ImageView photoImageView;
@@ -43,14 +47,14 @@ public class CreateCommunityActivity extends AppCompatActivity {
         selectPhotoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openGallery();
+                openGallery(true);
             }
         });
 
         selectBannerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openGallery();
+                openGallery(false);
             }
         });
 
@@ -58,34 +62,63 @@ public class CreateCommunityActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String communityName = communityNameEditText.getText().toString().trim();
-                // Perform further actions with the community data (e.g., save to database)
+                String photoUrl = selectedPhotoUri != null ? selectedPhotoUri.toString() : null;
+                String bannerUrl = selectedBannerUri != null ? selectedBannerUri.toString() : null;
 
-                // Launch the MainActivity or any other desired activity
-                Intent intent = new Intent(CreateCommunityActivity.this, CommunityListActivity.class);
-                startActivity(intent);
-                finish(); // Finish the activity
+                Community community = new Community(communityName, photoUrl, bannerUrl);
+
+                // Save the community to the database
+                AppDatabase appDatabase = AppDatabase.getAppDatabase(CreateCommunityActivity.this);
+                CommunityDao communityDao = appDatabase.getCommunityDao();
+                new InsertCommunityTask().execute(community);
             }
         });
-    }
+}
 
-    private void openGallery() {
+    private void openGallery(boolean isSelectingPhoto) {
         Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-        startActivityForResult(intent, REQUEST_SELECT_GALLERY);
+        startActivityForResult(intent, isSelectingPhoto ? REQUEST_SELECT_GALLERY : REQUEST_SELECT_BANNER);
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (resultCode == RESULT_OK && requestCode == REQUEST_SELECT_GALLERY && data != null) {
-            Uri selectedImageUri = data.getData();
-            if (selectedPhotoUri == null) {
-                selectedPhotoUri = selectedImageUri;
+        if (resultCode == RESULT_OK && data != null) {
+            if (requestCode == REQUEST_SELECT_GALLERY) {
+                selectedPhotoUri = data.getData();
                 photoImageView.setImageURI(selectedPhotoUri);
-            } else if (selectedBannerUri == null) {
-                selectedBannerUri = selectedImageUri;
+            } else if (requestCode == REQUEST_SELECT_BANNER) {
+                selectedBannerUri = data.getData();
                 bannerImageView.setImageURI(selectedBannerUri);
             }
         }
+    }
+
+    private class InsertCommunityTask extends AsyncTask<Community, Void, Void> {
+        @Override
+        protected Void doInBackground(Community... communities) {
+            AppDatabase appDatabase = AppDatabase.getAppDatabase(CreateCommunityActivity.this);
+            CommunityDao communityDao = appDatabase.getCommunityDao();
+            communityDao.insertCommunity(communities[0]);
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+            showSuccessMessage();
+            setResultAndFinish();
+        }
+    }
+
+    private void showSuccessMessage() {
+        Toast.makeText(CreateCommunityActivity.this, "Community was successfully created", Toast.LENGTH_SHORT).show();
+    }
+
+    private void setResultAndFinish() {
+        Intent resultIntent = new Intent();
+        setResult(RESULT_COMMUNITY_CREATED, resultIntent);
+        finish();
     }
 }
