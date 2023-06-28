@@ -8,7 +8,7 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.ImOnline"
@@ -17,13 +17,10 @@
             android:name=".activity.EditEducationActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.MainActivity"
+            android:name=".activity.activity.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.RegisterActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activity.LoginActivity"
+            android:name=".activity.activity.MainActivity"
             android:exported="false" />
         <activity
             android:name=".activity.ProfileActivityMain"
@@ -33,13 +30,26 @@
             android:exported="true"/>
         <activity
             android:name=".activity.EditWorkActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".activity.activity.CreateCommunityActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".activity.activity.SwipePagesAnimation"
+            android:exported="false"/>
+       <activity
+           android:name=".activity.activity.CommunityListActivity"
+           android:exported="false"/>
+        <activity android:name=".activity.activity.RegisterActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".activity.activity.LoginRegisterActivity"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
-
 </manifest>
