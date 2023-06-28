@@ -6,27 +6,23 @@
     <item
         android:id="@+id/navBarSearch"
         android:title="Search"
-        app:showAsAction="never"
-        android:icon="@drawable/loupe_icon"
+        android:icon="@drawable/baseline_search_24"
         />
     <item
         android:id="@+id/navBarHome"
         android:title="Home"
-        app:showAsAction="never"
-        android:icon="@drawable/home_icon"
+        android:icon="@drawable/baseline_home_24"
         />
     <item
         android:id="@+id/navBarMessages"
         android:title="Messages"
-        app:showAsAction="never"
-        android:icon="@drawable/messages_icon"
+        android:icon="@drawable/baseline_message_24"
         />
 
     <item
         android:id="@+id/navBarSettings"
-        android:title="Search"
-        app:showAsAction="never"
-        android:icon="@drawable/settings_icon"
+        android:title="Settings"
+        android:icon="@drawable/baseline_settings_24"
         />
 
 </menu>
