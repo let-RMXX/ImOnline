@@ -75,7 +75,7 @@ public class EditProfileActivity extends AppCompatActivity {
         String location = this.editTextLocation.getText().toString();
         String avatar = Integer.toString(avatarList[position]);
 
-        int profileId=1;
+        int profileId = 1;
 
         ProfileActivity currentProfile = AppDatabase.getInstance(this).getProfileDAO().getById(profileId);
 
