@@ -8,7 +8,7 @@
     <ImageView
         android:id="@+id/bannerImageView"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="100dp"
         android:scaleType="centerCrop"
         android:src="@drawable/bannerdefimg"
         app:layout_constraintEnd_toEndOf="parent"

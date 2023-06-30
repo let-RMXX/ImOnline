@@ -73,7 +73,7 @@
         android:background="@drawable/edit_text_background"
         android:ems="10"
         android:hint="Enter your Password"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         android:textAlignment="center"
         android:textColorHint="#80000000"
         app:layout_constraintBottom_toTopOf="@+id/forgotPasswordLogin"
@@ -190,7 +190,7 @@
         app:layout_constraintHorizontal_bias="0.127"
         app:layout_constraintStart_toStartOf="@+id/SignInGoogleButton"
         app:layout_constraintTop_toTopOf="@+id/SignInGoogleButton"
-        app:srcCompat="@drawable/github_icon" />
+        app:srcCompat="@drawable/google_icon" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -201,7 +201,7 @@
         app:layout_constraintHorizontal_bias="0.127"
         app:layout_constraintStart_toStartOf="@+id/SignInGitHubButton"
         app:layout_constraintTop_toTopOf="@+id/SignInGitHubButton"
-        app:srcCompat="@drawable/google_icon" />
+        app:srcCompat="@drawable/github_icon" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

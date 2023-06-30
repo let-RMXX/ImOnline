@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.pac.imonline.R;
-import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -65,21 +64,24 @@ public class CommunityAdapter extends RecyclerView.Adapter<CommunityAdapter.Comm
                         .apply(new RequestOptions().override(500, 500)) // Adjust the dimensions as needed
                         .into(photoImageView);
             } else {
-                // Set a default image if the photo URL is null
                 photoImageView.setImageResource(R.drawable.defimgcommunities);
             }
 
-            // Load banner image using Picasso library
             if (community.getBannerUrl() != null) {
-                Picasso.get()
+                Glide.with(itemView.getContext())
                         .load(community.getBannerUrl())
-                        .resize(800, 300) // Adjust the dimensions as needed
-                        .centerCrop()
+                        .apply(new RequestOptions())
                         .into(bannerImageView);
-            } else {
-                // Set a default image if the banner URL is null
-                bannerImageView.setImageResource(R.drawable.bannerdefimg);
             }
+
+            // Load banner image using Picasso library
+            //if (community.getBannerUrl() != null) {
+              //  Picasso.get()
+                //        .load(community.getBannerUrl())
+                  //      .into(bannerImageView);
+            //} else {
+              //  bannerImageView.setImageResource(R.drawable.bannerdefimg);
+            //}
         }
     }
 }

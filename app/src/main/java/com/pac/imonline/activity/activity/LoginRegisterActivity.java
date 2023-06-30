@@ -1,5 +1,6 @@
 package com.pac.imonline.activity.activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,9 +12,12 @@ import com.pac.imonline.R;
 
 public class LoginRegisterActivity extends AppCompatActivity {
 
+    private static final int REQUEST_CODE = 1;
     private Button signInBtn;
 
     private Button signUpBtn;
+
+    private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +32,8 @@ public class LoginRegisterActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
+
+
         });
 
         signUpBtn = findViewById(R.id.SignUpButton1);

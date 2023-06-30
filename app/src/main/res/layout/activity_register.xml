@@ -134,7 +134,7 @@
         android:background="@drawable/edit_text_background"
         android:ems="10"
         android:hint="Enter your Password"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         android:textAlignment="center"
         android:textColorHint="#80000000"
         app:layout_constraintBottom_toTopOf="@+id/signUpButton"
